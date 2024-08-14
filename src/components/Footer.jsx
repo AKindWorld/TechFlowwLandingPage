@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/Logo-Text-Light-Transparent.png'
 
 const Footer = () => {
     return (
@@ -26,7 +27,7 @@ const Footer = () => {
                     </div>
 
                     <div className="col-span-2 sm:col-span-1">
-                        <img src="src\assets\Logo-Text-Light-Transparent.png" />
+                        <img src={logo} />
                     </div>
 
                     <div className="col-span-2 sm:col-span-1">

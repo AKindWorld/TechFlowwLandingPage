@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import logo from '../assets/Logo-Text-Light-Transparent.png'
 
 
 const NavBar = () => {
@@ -25,7 +26,7 @@ const NavBar = () => {
                 <div className="flex-1 md:flex md:items-center md:gap-12">
                     <a className="block text-black" href="#">
                     <span className="sr-only">Home</span>
-                    <img className="h-20 w-auto" src="src\assets\Logo-Text-Light-Transparent.png" alt="TechFloww Logo"/>
+                    <img className="h-20 w-auto" src={logo} alt="TechFloww Logo"/>
                     </a>
                 </div>
 
