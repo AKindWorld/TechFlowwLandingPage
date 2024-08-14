@@ -10,9 +10,9 @@ const Footer = () => {
                 <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
                     <div className="col-span-2">
                     <div>
-                        <h2 className="text-2xl font-bold text-gray-900">Ready to scale your business?</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 dark:text-[#fff]">Ready to scale your business?</h2>
 
-                        <p className="mt-4 text-gray-500 poppins-light">
+                        <p className="mt-4 text-gray-500 poppins-light dark:text-gray-300">
                         Get in touch and we'll build something amazing <span className='lavishly-yours-regular text-3xl'> together</span>.
                         </p>
                     </div>
@@ -31,77 +31,77 @@ const Footer = () => {
                     </div>
 
                     <div className="col-span-2 sm:col-span-1">
-                    <p className="font-medium text-gray-900">Links</p>
+                    <p className="font-medium text-gray-900 dark:text-white">Links</p>
 
-                    <ul className="mt-6 space-y-4 text-sm">
+                    <ul className="mt-6 space-y-4 text-sm ">
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> About Us </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> About Us </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Services </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Services </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Contact </a>
-                        </li>
-                    </ul>
-                    </div>
-
-                    <div className="col-span-2 sm:col-span-1">
-                    <p className="font-medium text-gray-900">Portfolio</p>
-
-                    <ul className="mt-6 space-y-4 text-sm">
-                        <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Profile</a>
-                        </li>
-
-                        <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Process Overview </a>
-                        </li>
-
-                        <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Achievements </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Contact </a>
                         </li>
                     </ul>
                     </div>
 
                     <div className="col-span-2 sm:col-span-1">
-                    <p className="font-medium text-gray-900">Services</p>
+                    <p className="font-medium text-gray-900 dark:text-white">Portfolio</p>
 
                     <ul className="mt-6 space-y-4 text-sm">
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Web Development </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Profile</a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> App Development </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Process Overview </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Domain & Hosting </a>
-                        </li>
-
-                        <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> IT Consultation </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Achievements </a>
                         </li>
                     </ul>
                     </div>
 
                     <div className="col-span-2 sm:col-span-1">
-                    <p className="font-medium text-gray-900">Connect</p>
+                    <p className="font-medium text-gray-900 dark:text-white">Services</p>
 
                     <ul className="mt-6 space-y-4 text-sm">
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> GitHub </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Web Development </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> X (formerly Twitter) </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> App Development </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 transition hover:opacity-75"> Instagram </a>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Domain & Hosting </a>
+                        </li>
+
+                        <li>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> IT Consultation </a>
+                        </li>
+                    </ul>
+                    </div>
+
+                    <div className="col-span-2 sm:col-span-1">
+                    <p className="font-medium text-gray-900 dark:text-white">Connect</p>
+
+                    <ul className="mt-6 space-y-4 text-sm">
+                        <li>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> GitHub </a>
+                        </li>
+
+                        <li>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> X (formerly Twitter) </a>
+                        </li>
+
+                        <li>
+                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Instagram </a>
                         </li>
                     </ul>
                     </div>
@@ -205,19 +205,19 @@ const Footer = () => {
 
                 <div className="mt-8 border-t border-gray-100 pt-8">
                 <div className="sm:flex sm:justify-between">
-                    <p className="text-xs text-gray-500">&copy; 2024 TechFloww. All rights reserved.</p>
+                    <p className="text-xs text-gray-500 dark:text-zinc-300">&copy; 2024 TechFloww. All rights reserved.</p>
 
                     <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
                     <li>
-                        <a href="#" className="text-gray-500 transition hover:opacity-75"> Terms & Conditions </a>
+                        <a href="#" className="text-gray-500 dark:text-zinc-300 transition hover:opacity-75"> Terms & Conditions </a>
                     </li>
 
                     <li>
-                        <a href="#" className="text-gray-500 transition hover:opacity-75"> Privacy Policy </a>
+                        <a href="#" className="text-gray-500 dark:text-zinc-300 transition hover:opacity-75"> Privacy Policy </a>
                     </li>
 
                     <li>
-                        <a href="#" className="text-gray-500 transition hover:opacity-75"> Cookies </a>
+                        <a href="#" className="text-gray-500 dark:text-zinc-300 transition hover:opacity-75"> Cookies </a>
                     </li>
                     </ul>
                 </div>

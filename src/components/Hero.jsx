@@ -12,7 +12,7 @@ const Hero = () => {
 
             <div className="flex hero pl-0 h-[100vh] items-center justify-center">
                 <div className='flex-auto text-container mx-auto max-w-2xl py-32 sm:py-48 lg:py-5'>
-                    <h1 className='text-5xl font-bold text-black sm:text-6-xl poppins-bold'>
+                    <h1 className='text-5xl font-bold text-black dark:text-[#D4C0FF] sm:text-6-xl poppins-bold'>
                         Flow with 
                         <span className='lavishly-yours-regular text-8xl'> innovation,</span> <br></br> 
                         Lead with TechFloww
@@ -22,10 +22,10 @@ const Hero = () => {
                             We are a team of highly motivated and skilled developers dedicated to delivering only the best software.
                         </p>
                     </span>
-                    <button className='bg-gradient-to-r from-[#3F0] to-[#16D5E1] text-black mt-6 font-bold py-4 px-8 rounded-lg'>
+                    <button className='bg-gradient-to-r from-[#3F0] to-[#16D5E1] text-black dark:text-gray-200 mt-6 font-bold py-4 px-8 rounded-lg'>
                         CONTACT US
                     </button>
-                    <a href='#services' className='text-black font-bold mt-6 px-6 underline'>Learn more</a>
+                    <a href='#services' className='text-black font-bold mt-6 px-6 underline dark:text-[#D4C0FF]/50 dark:hover:text-[#D4C0FF]'>Learn more</a>
                 </div>
                 <div className='flex justify-between image-container'>
                 <svg className='mr-10' width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
