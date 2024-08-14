@@ -8,6 +8,7 @@ import {
 import { Analytics } from "@vercel/analytics/react"
 
 import Home from './Pages/Home'
+import ProductDemo from './Pages/ProductDemo'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/demo" element={<ProductDemo />} />
       </Routes>
     </Router>
   )

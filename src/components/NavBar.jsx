@@ -24,7 +24,7 @@ const NavBar = () => {
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                 <div className="flex-1 md:flex md:items-center md:gap-12">
-                    <a className="block text-black" href="#">
+                    <a className="block text-black" href="/">
                     <span className="sr-only">Home</span>
                     <img className="h-20 w-auto" src={logo} alt="TechFloww Logo"/>
                     </a>
@@ -55,7 +55,7 @@ const NavBar = () => {
                     <div className="sm:flex sm:gap-4">
                         <a
                         className="rounded-md bg-gradient-to-r from-[#FF7A00] to-[#FFD954] px-5 py-2.5 text-sm poppins-medium text-black shadow"
-                        href="#"
+                        href="/demo"
                         >
                         DEMO OUR PRODUCTS
                         </a>
