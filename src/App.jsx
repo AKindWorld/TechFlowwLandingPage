@@ -5,7 +5,6 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
 import Home from './Pages/Home'
