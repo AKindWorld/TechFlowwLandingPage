@@ -6,10 +6,16 @@ import Services from '../components/Services';
 import Qualities from '../components/Qualities';
 import Portfolio from '../components/Portfolio';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
         <>
+            <div>
+                <Helmet>
+                    <title>TechFloww IT Services</title>
+                </Helmet>
+            </div>
             <Hero />
             <About />
             <Services />

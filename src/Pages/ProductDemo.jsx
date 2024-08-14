@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 //import emailjs from 'emailjs-com';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet';
 
 const ProductDemo = () => {
     const [name, setName] = useState('');
@@ -30,6 +31,11 @@ const ProductDemo = () => {
 
     return (
         <>
+            <div>
+                <Helmet>
+                    <title>Demos | TechFloww IT Services</title>
+                </Helmet>
+            </div>
             <div>
                 <NavBar />
             </div>
