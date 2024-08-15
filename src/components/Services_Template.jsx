@@ -1,0 +1,22 @@
+import React from 'react';
+import data from '../assets/Services_Data.json';
+
+const ServicesTemplate = () => {
+    return (
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {data.services.map((service, index) => (
+                <a
+                    key={index}
+                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-teal-500/10 hover:shadow-teal-500/10 dark:bg-[#181825]"
+                    href="#"
+                >
+                    <div dangerouslySetInnerHTML={{ __html: service.icon }} className='mb-4 w-32' />
+                    <h2 className="mt-4 text-xl font-bold text-white">{service.service_name}</h2>
+                    <p className="mt-1 text-sm text-gray-300">{service.service_desc}</p>
+                </a>
+            ))}
+        </div>
+    );
+};
+
+export default ServicesTemplate;
