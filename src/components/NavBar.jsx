@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/Logo-Text-Light-Transparent.png'
 
 
-const NavBar = () => {
+/* const NavBar = () => {
     const [top, setTop] = useState(!window.scrollY);
     const [isOpen, setisOpen] = React.useState(false);
     function handleClick() {
@@ -17,7 +17,14 @@ const NavBar = () => {
       };
       window.addEventListener('scroll', scrollHandler);
       return () => window.removeEventListener('scroll', scrollHandler);
-    }, [top]);
+    }, [top]); */
+
+function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
     return (
         <header className="bg-teal-200 dark:bg-[#181825] m-auto lg:m-10 xl:m-10 mt-4 lg:mt-4 xl:mt-4 rounded-xl poppins-regular xl:fixed lg:fixed z-10 w-[94vw] block justify-self-center content-center">
@@ -150,8 +157,8 @@ const NavBar = () => {
                         </a>
                     </div>
 
-                    <div className="block md:hidden">
-                        <button className="rounded">
+                    <div className="mobile-click-to-view-index-borgarrr block md:hidden">
+                        <button className="rounded" onClick={toggleMenu}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -164,6 +171,29 @@ const NavBar = () => {
                         </svg>
                         </button>
                     </div>
+                    {isOpen && (
+                        <div className="mobile-menu absolute top-[14vh] left-0 w-screen bg-white">
+                            <div className="flex items-center justify-center h-screen">
+                                <ul className="space-y-4 text-center">
+                                    <li>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> About </a>
+                                    </li>
+
+                                    <li>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Services </a>
+                                    </li>
+
+                                    <li>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Portfolio </a>
+                                    </li>
+
+                                    <li>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Contact Us </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    )}
                     </div>
                 </div>
                 </div>
