@@ -2,7 +2,7 @@ import React from 'react';
 
 const Services = () => {
     return (
-        <div className='h-auto p-10 sm:p-15 md:p-20'>
+        <div id="services" className='h-auto p-10 sm:p-15 md:p-20'>
             <h1 className='text-3xl text-center poppins-bold mb-20 sm:mb-15 md:mb-10'>Services</h1>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                 <div className="rounded-lg bg-white dark:bg-[#181825] p-0 sm:p-8">

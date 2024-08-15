@@ -3,7 +3,7 @@ import '../../src/Qualities.css';
 
 const Qualities = () => {
     return (
-        <div className=''>
+        <div id="qualities" className=''>
             <div className='grid place-items-center h-screen'>
                 <h1 className='text-center text-7xl lavishly-yours-regular p-6 self-center'>
                     Under construction
