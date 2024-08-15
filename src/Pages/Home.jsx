@@ -22,7 +22,7 @@ const Home = () => {
             <Qualities />
             <Portfolio />
             <Footer />
-            <div className='bg-colors-svg'>
+            {/* <div className='bg-colors-svg'>
                 <div className='violet-svg-top'>
                 <svg width="1381" height="1094" viewBox="0 0 1381 1094" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M548 206C715.489 200.828 822.339 67.9501 855.466 1.08578C855.805 0.40112 856.485 0 857.249 0H1379C1380.1 0 1381 0.895407 1381 1.99998V890.5V1055.58C1381 1056.15 1380.75 1056.72 1380.32 1057.1C1298.06 1128.25 1128.81 1083.32 1060 1017C997.344 956.614 1056.5 691.5 907 681.5C757.5 671.5 632 870.5 390 872.5C148 874.5 0 646 0 508.5C-6.91414e-06 376.5 337.5 212.5 548 206Z" fill="url(#paint0_linear_676_372)"/>
@@ -69,7 +69,7 @@ const Home = () => {
                     </defs>
                 </svg>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

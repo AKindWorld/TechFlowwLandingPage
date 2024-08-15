@@ -5,28 +5,28 @@ const Footer = () => {
     return (
         <footer className="">
             <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-                <div className="lg:flex lg:items-start lg:gap-8">
+                <div className="block lg:items-start lg:gap-8">
 
-                <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-                    <div className="col-span-2">
-                    <div>
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-[#fff]">Ready to scale your business?</h2>
+                <div className="mt-8 grid grid-cols-4 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+                    <div className="col-span-4 md:col-span-3 px-3">
+                        <div>
+                            <h2 className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-bold text-gray-900 dark:text-[#fff]">Ready to scale your business?</h2>
 
-                        <p className="mt-4 text-gray-500 poppins-light dark:text-gray-300">
-                        Get in touch and we'll build something amazing <span className='lavishly-yours-regular text-3xl'> together</span>.
-                        </p>
+                            <p className="mt-4 text-gray-500 poppins-light dark:text-gray-300 text-xs md:text-xl lg:text-xl xl:text-xl">
+                            Get in touch and we'll build something amazing <span className='lavishly-yours-regular text-sm md:text-3xl lg:text-3xl xl:text-3xl'> together</span>.
+                            </p>
+                        </div>
                     </div>
-                    </div>
 
-                    <div className="col-span-2 lg:col-span-3 lg:flex justify-end items-center">
+                    <div className="col-span-4 md:col-span-1 lg:col-span-2 lg:flex justify-end items-center justify-self-center content-center">
                         <button
-                            className="mt-1 w-full bg-gradient-to-r from-[#3F0] to-[#16D5E1] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none sm:mt-0 sm:w-auto sm:shrink-0 justify-end"
+                            className="mt-1 w-[90vw] bg-gradient-to-r from-[#3F0] to-[#16D5E1] px-6 py-3 text-xs md:text-sm font-bold uppercase tracking-wide text-white transition-none sm:mt-0 sm:w-auto sm:shrink-0 justify-end"
                         >
                             Contact Us
                         </button>
                     </div>
 
-                    <div className="col-span-2 sm:col-span-1">
+                    <div className="col-span-4 lg:col-span-1 sm:col-span-4 sm:h-32 justify-self-center content-center">
                     <svg width="140" height="26" viewBox="0 0 140 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M27.2732 3.84504C27.9056 2.19528 29.4944 1.10547 31.267 1.10547H41.924C44.9169 1.10547 46.9835 4.09018 45.9204 6.87737L39.0337 24.9341C38.8656 25.375 38.4414 25.6664 37.968 25.6664H25.117C22.1211 25.6664 20.0543 22.676 21.1232 19.8878L27.2732 3.84504Z" fill="url(#paint0_linear_691_9)"/>
                         <path d="M27.2732 3.84504C27.9056 2.19528 29.4944 1.10547 31.267 1.10547H41.924C44.9169 1.10547 46.9835 4.09018 45.9204 6.87737L39.0337 24.9341C38.8656 25.375 38.4414 25.6664 37.968 25.6664H25.117C22.1211 25.6664 20.0543 22.676 21.1232 19.8878L27.2732 3.84504Z" fill="url(#paint1_linear_691_9)" fill-opacity="0.5"/>

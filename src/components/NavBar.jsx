@@ -20,7 +20,7 @@ const NavBar = () => {
     }, [top]);
 
     return (
-        <header className="bg-white dark:bg-[#181825] m-10 mt-4 rounded-xl poppins-regular fixed z-10 w-[90vw]">
+        <header className="bg-teal-200 dark:bg-[#181825] m-auto lg:m-10 xl:m-10 mt-4 lg:mt-4 xl:mt-4 rounded-xl poppins-regular xl:fixed lg:fixed z-10 w-[94vw] block justify-self-center content-center">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                 <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -141,7 +141,7 @@ const NavBar = () => {
                     </nav>
 
                     <div className="flex items-center gap-4">
-                    <div className="sm:flex sm:gap-4">
+                    <div className="sm:flex sm:gap-4 hidden sm:block">
                         <a
                         className="rounded-md bg-gradient-to-r from-[#FF7A00] to-[#FFD954] px-5 py-2.5 text-sm poppins-medium text-black shadow dark:text-[#fff]"
                         href="/demo"

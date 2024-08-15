@@ -2,10 +2,10 @@ import React from 'react';
 
 const Services = () => {
     return (
-        <div className='h-auto p-20'>
-            <h1 className='text-3xl text-center poppins-bold mb-10'>Services</h1>
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                <div className="rounded-lg bg-white dark:bg-[#181825] p-8">
+        <div className='h-auto p-10 sm:p-15 md:p-20'>
+            <h1 className='text-3xl text-center poppins-bold mb-20 sm:mb-15 md:mb-10'>Services</h1>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                <div className="rounded-lg bg-white dark:bg-[#181825] p-0 sm:p-8">
                     <svg className='mb-4' width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 18H13.5C13.5 10.545 15.5145 4.5 18 4.5C14.4196 4.5 10.9858 5.92232 8.45406 8.45406C5.92232 10.9858 4.5 14.4196 4.5 18Z" fill="url(#paint0_linear_676_527)"/>
                         <path d="M31.5 18C31.5 14.4196 30.0777 10.9858 27.5459 8.45406C25.0142 5.92232 21.5804 4.5 18 4.5C20.4855 4.5 22.5 10.545 22.5 18H31.5Z" fill="url(#paint1_linear_676_527)"/>
@@ -31,14 +31,14 @@ const Services = () => {
                         </linearGradient>
                         </defs>
                     </svg>
-                    <h1 className='text-xl mb-4 poppins-semibold text-left'>
+                    <h1 className='text-base sm:text-lg md:text-xl mb-4 poppins-semibold text-left'>
                         Web Development
                     </h1>
-                    <p className='p-2 pl-0 poppins-light text-left'>
+                    <p className='text-sm sm:text-base md:text-lg p-2 pl-0 poppins-light text-left'>
                         We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients.
                     </p>
                 </div>
-                <div className="rounded-lg bg-white dark:bg-[#181825] p-8">
+                <div className="rounded-lg bg-white dark:bg-[#181825] p-0 sm:p-8">
                     <svg className='mb-4' width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 18H13.5C13.5 10.545 15.5145 4.5 18 4.5C14.4196 4.5 10.9858 5.92232 8.45406 8.45406C5.92232 10.9858 4.5 14.4196 4.5 18Z" fill="url(#paint0_linear_676_527)"/>
                         <path d="M31.5 18C31.5 14.4196 30.0777 10.9858 27.5459 8.45406C25.0142 5.92232 21.5804 4.5 18 4.5C20.4855 4.5 22.5 10.545 22.5 18H31.5Z" fill="url(#paint1_linear_676_527)"/>
@@ -64,14 +64,14 @@ const Services = () => {
                         </linearGradient>
                         </defs>
                     </svg>
-                    <h1 className='text-xl mb-4 poppins-semibold text-left'>
+                    <h1 className='text-base sm:text-lg md:text-xl mb-4 poppins-semibold text-left'>
                         Web Development
                     </h1>
-                    <p className='p-2 pl-0 poppins-light text-left'>
+                    <p className='text-sm sm:text-base md:text-lg p-2 pl-0 poppins-light text-left'>
                         We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients.
                     </p>
                 </div>
-                <div className="rounded-lg bg-white dark:bg-[#181825] p-8">
+                <div className="rounded-lg bg-white dark:bg-[#181825] p-0 sm:p-8">
                     <svg className='mb-4' width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 18H13.5C13.5 10.545 15.5145 4.5 18 4.5C14.4196 4.5 10.9858 5.92232 8.45406 8.45406C5.92232 10.9858 4.5 14.4196 4.5 18Z" fill="url(#paint0_linear_676_527)"/>
                         <path d="M31.5 18C31.5 14.4196 30.0777 10.9858 27.5459 8.45406C25.0142 5.92232 21.5804 4.5 18 4.5C20.4855 4.5 22.5 10.545 22.5 18H31.5Z" fill="url(#paint1_linear_676_527)"/>
@@ -97,14 +97,14 @@ const Services = () => {
                         </linearGradient>
                         </defs>
                     </svg>
-                    <h1 className='text-xl mb-4 poppins-semibold text-left'>
+                    <h1 className='text-base sm:text-lg md:text-xl mb-4 poppins-semibold text-left'>
                         Web Development
                     </h1>
-                    <p className='p-2 pl-0 poppins-light text-left'>
+                    <p className='text-sm sm:text-base md:text-lg p-2 pl-0 poppins-light text-left'>
                         We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients.
                     </p>
                 </div>
-                <div className="rounded-lg bg-white dark:bg-[#181825] p-8">
+                <div className="rounded-lg bg-white dark:bg-[#181825] p-0 sm:p-8">
                     <svg className='mb-4' width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 18H13.5C13.5 10.545 15.5145 4.5 18 4.5C14.4196 4.5 10.9858 5.92232 8.45406 8.45406C5.92232 10.9858 4.5 14.4196 4.5 18Z" fill="url(#paint0_linear_676_527)"/>
                         <path d="M31.5 18C31.5 14.4196 30.0777 10.9858 27.5459 8.45406C25.0142 5.92232 21.5804 4.5 18 4.5C20.4855 4.5 22.5 10.545 22.5 18H31.5Z" fill="url(#paint1_linear_676_527)"/>
@@ -130,14 +130,14 @@ const Services = () => {
                         </linearGradient>
                         </defs>
                     </svg>
-                    <h1 className='text-xl mb-4 poppins-semibold text-left'>
+                    <h1 className='text-base sm:text-lg md:text-xl mb-4 poppins-semibold text-left'>
                         Web Development
                     </h1>
-                    <p className='p-2 pl-0 poppins-light text-left'>
+                    <p className='text-sm sm:text-base md:text-lg p-2 pl-0 poppins-light text-left'>
                         We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients.
                     </p>
                 </div>
-                <div className="rounded-lg bg-white dark:bg-[#181825] p-8">
+                <div className="rounded-lg bg-white dark:bg-[#181825] p-0 sm:p-8">
                     <svg className='mb-4' width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 18H13.5C13.5 10.545 15.5145 4.5 18 4.5C14.4196 4.5 10.9858 5.92232 8.45406 8.45406C5.92232 10.9858 4.5 14.4196 4.5 18Z" fill="url(#paint0_linear_676_527)"/>
                         <path d="M31.5 18C31.5 14.4196 30.0777 10.9858 27.5459 8.45406C25.0142 5.92232 21.5804 4.5 18 4.5C20.4855 4.5 22.5 10.545 22.5 18H31.5Z" fill="url(#paint1_linear_676_527)"/>
@@ -163,10 +163,10 @@ const Services = () => {
                         </linearGradient>
                         </defs>
                     </svg>
-                    <h1 className='text-xl mb-4 poppins-semibold text-left'>
+                    <h1 className='text-base sm:text-lg md:text-xl mb-4 poppins-semibold text-left'>
                         Web Development
                     </h1>
-                    <p className='p-2 pl-0 poppins-light text-left'>
+                    <p className='text-sm sm:text-base md:text-lg p-2 pl-0 poppins-light text-left'>
                         We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients.
                     </p>
                 </div>
