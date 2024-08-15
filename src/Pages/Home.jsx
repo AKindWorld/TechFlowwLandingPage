@@ -5,6 +5,7 @@ import About from '../components/About';
 import Services from '../components/Services';
 import Qualities from '../components/Qualities';
 import Portfolio from '../components/Portfolio';
+import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet';
 
@@ -21,6 +22,7 @@ const Home = () => {
             <Services />
             <Qualities />
             <Portfolio />
+            <Testimonials />
             <Footer />
             {/* <div className='bg-colors-svg'>
                 <div className='violet-svg-top'>

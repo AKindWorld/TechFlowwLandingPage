@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../src/Qualities.css'; // Import the CSS file for styling
+import '../../src/Qualities.css';
 
 const Qualities = () => {
     return (
