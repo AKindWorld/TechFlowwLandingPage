@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
 import Qualities from '../components/Qualities';
-import Portfolio from '../components/Portfolio';
+import Portfolio from '../components/PortfolioSection';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet';
@@ -21,7 +21,6 @@ const Home = () => {
             <About />
             <Services />
             <Qualities />
-            <Portfolio />
             <Testimonials />
             <Footer />
             {/* <div className='bg-colors-svg'>

@@ -138,7 +138,7 @@ function NavBar() {
                         </li>
 
                         <li>
-                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Portfolio </a>
+                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="/portfolio"> Portfolio </a>
                         </li>
 
                         <li>
@@ -184,7 +184,7 @@ function NavBar() {
                                     </li>
 
                                     <li>
-                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Portfolio </a>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="/portfolio"> Portfolio </a>
                                     </li>
 
                                     <li>

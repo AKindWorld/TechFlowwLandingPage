@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PortfolioProfiles from './PortfolioProfiles';
+import Testimonials from './Testimonials';
 
 const Portfolio = () => {
     const [selectedTab, setSelectedTab] = useState('Profiles');
@@ -6,16 +8,16 @@ const Portfolio = () => {
     const renderContent = () => {
         switch (selectedTab) {
             case 'Profiles':
-                return  <div className='h-screen content-center text-center poppins-bold text-2xl'>
-                            Profiles Content
+                return  <div className='h-auto content-center text-center poppins-bold text-2xl'>
+                            <PortfolioProfiles/>
                         </div>;
             case 'Process Overview':
-                return  <div className='h-screen content-center text-center poppins-bold text-2xl'>
+                return  <div className='h-auto content-center text-center poppins-bold text-2xl'>
                             Process Overview Content
                         </div>;
             case 'Achievements':
-                return  <div className='h-screen content-center text-center poppins-bold text-2xl'>
-                            Achievements Content
+                return  <div className='h-auto content-center text-center poppins-bold text-2xl'>
+                            <Testimonials/>
                         </div>;
             default:
                 return <div>Profiles Content</div>;
