@@ -6,7 +6,7 @@ const Testimonials_Template = () => {
         <div>
             {data.testimonials.map((testimonial, index) => (
                 <div className="mb-8 sm:break-inside-avoid" key={index}>
-                    <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
+                    <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
                         <div className="flex items-center gap-4">
                             <img
                                 alt=""

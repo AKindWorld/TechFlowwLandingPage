@@ -9,7 +9,7 @@ const PortfolioProfiles = () => {
             </h3>
             <div className='mt-2 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
                 {data.boardmembers.map((boardmembers, index) => (
-                    <div className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] hover:border-teal-500/10">
+                    <div className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10">
                     <img src={boardmembers.image} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
                     <div className="space-y-4 text-center divide-y divide-gray-700 dark:divide-gray-300">
                         <div className="my-2 space-y-1">
@@ -56,7 +56,7 @@ const PortfolioProfiles = () => {
             <div className='mt-2 sm:columns-2 sm:gap-6 lg:columns-2 lg:gap-8 p-10 m-16'>
                 {data.technicalexperts.map((technicalexperts, index) => (
                     <div className="mb-8 sm:break-inside-avoid" key={index}>
-                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
+                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
                             <div className="flex items-center gap-4">
                                 <img
                                     alt=""
@@ -81,7 +81,7 @@ const PortfolioProfiles = () => {
             <div className='mt-2 sm:columns-2 sm:gap-6 lg:columns-4 lg:gap-8 p-10 m-16'>
                 {data.technicalteammembers.map((technicalteammembers, index) => (
                     <div className="mb-8 sm:break-inside-avoid" key={index}>
-                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
+                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
                             <div className="flex items-center gap-4">
                                 <img
                                     alt=""
