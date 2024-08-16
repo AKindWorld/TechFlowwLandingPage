@@ -21,28 +21,28 @@ const PortfolioProfiles = () => {
                                 <img
                                     alt=""
                                     src={boardmembers.link1iconsrc}
-                                    className="size-4 rounded-full object-cover"
+                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                             </a>
                             <a rel="noopener noreferrer" href={boardmembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                 <img
                                     alt=""
                                     src={boardmembers.link2iconsrc}
-                                    className="size-4 rounded-full object-cover"
+                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                             </a>
                             <a rel="noopener noreferrer" href={boardmembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                 <img
                                     alt=""
                                     src={boardmembers.link4iconsrc}
-                                    className="size-4 rounded-full object-cover"
+                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                             </a>
                             <a rel="noopener noreferrer" href={boardmembers.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                 <img
                                     alt=""
                                     src={boardmembers.link4iconsrc}
-                                    className="size-4 rounded-full object-cover"
+                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                             </a>
                         </div>
@@ -61,7 +61,7 @@ const PortfolioProfiles = () => {
                                 <img
                                     alt=""
                                     src={technicalexperts.image}
-                                    className="size-14 rounded-full object-cover"
+                                    className="size-14 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                                 <div>
                                     <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{technicalexperts.name}</p>
@@ -71,6 +71,36 @@ const PortfolioProfiles = () => {
                             <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
                                 {technicalexperts.skills[1]}
                             </p>
+                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                                <a rel="noopener noreferrer" href={technicalexperts.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link1iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalexperts.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link2iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalexperts.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalexperts.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                            </div>
                         </blockquote>
                     </div>
                 ))}
@@ -86,7 +116,7 @@ const PortfolioProfiles = () => {
                                 <img
                                     alt=""
                                     src={technicalteammembers.image}
-                                    className="size-14 rounded-full object-cover"
+                                    className="size-14 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                                 <div>
                                     <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{technicalteammembers.name}</p>
@@ -96,6 +126,36 @@ const PortfolioProfiles = () => {
                             <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
                                 {technicalteammembers.skills[1]}
                             </p>
+                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                                <a rel="noopener noreferrer" href={technicalteammembers.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link1iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalteammembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link2iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalteammembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalteammembers.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                            </div>
                         </blockquote>
                     </div>
                 ))}
