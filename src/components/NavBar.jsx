@@ -130,11 +130,11 @@ function NavBar() {
                     <nav aria-label="Global" className="hidden md:block">
                     <ul className="flex items-center gap-6 text-sm">
                         <li>
-                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> About </a>
+                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#about"> About </a>
                         </li>
 
                         <li>
-                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Services </a>
+                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#services"> Services </a>
                         </li>
 
                         <li>
@@ -176,11 +176,11 @@ function NavBar() {
                             <div className="flex items-center justify-center h-screen">
                                 <ul className="space-y-4 text-center">
                                     <li>
-                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> About </a>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#about" onClick={toggleMenu}> About </a>
                                     </li>
 
                                     <li>
-                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#"> Services </a>
+                                    <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="#" onClick={toggleMenu}> Services </a>
                                     </li>
 
                                     <li>

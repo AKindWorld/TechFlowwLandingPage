@@ -24,6 +24,10 @@ const Portfolio = () => {
         }
     };
 
+    const getTabClassName = (tabName) => {
+        return `shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-teal-200 hover:text-gray-700 ${selectedTab === tabName ? 'bg-teal-300' : ''}`;
+    };
+
     return (
         <div id="portfolio">
             <div className="sm:hidden">
@@ -39,7 +43,7 @@ const Portfolio = () => {
                 <nav className="flex gap-6 justify-center pt-28" aria-label="Tabs">
                     <a
                         href="#portfolio"
-                        className="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                        className={getTabClassName('Profiles')}
                         onClick={() => setSelectedTab('Profiles')}
                     >
                         Profile
@@ -47,7 +51,7 @@ const Portfolio = () => {
 
                     <a
                         href="#portfolio"
-                        className="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                        className={getTabClassName('Process Overview')}
                         onClick={() => setSelectedTab('Process Overview')}
                     >
                         Process Overview
@@ -55,7 +59,7 @@ const Portfolio = () => {
 
                     <a
                         href="#portfolio"
-                        className="shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                        className={getTabClassName('Achievements')}
                         onClick={() => setSelectedTab('Achievements')}
                     >
                         Achievements
