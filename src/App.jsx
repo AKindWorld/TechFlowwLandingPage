@@ -11,6 +11,16 @@ import Home from './Pages/Home'
 import ProductDemo from './Pages/ProductDemo'
 import Portfolio from './Pages/Portfolio'
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
 function App() {
 
   return (
