@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Home from './Pages/Home'
 import ProductDemo from './Pages/ProductDemo'
 import Portfolio from './Pages/Portfolio'
+import Contact from './Pages/Contact'
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/demo" element={<ProductDemo />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   )
