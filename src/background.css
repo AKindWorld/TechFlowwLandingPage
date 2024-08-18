@@ -1,0 +1,84 @@
+.top-right{
+    background: linear-gradient(300deg, #33ff00, #16d5e1);
+    background-size: 400% 400%;
+
+    filter: blur(200px);
+
+    top: 0%;
+    left: 0%;
+
+    width: 300px;
+    height: 300px;
+
+    -webkit-animation: change-colors-1 14s ease infinite;
+    -moz-animation: change-colors-1 14s ease infinite;
+    -o-animation: change-colors-1 14s ease infinite;
+    animation: change-colors-1 14s ease infinite;
+}
+
+@-webkit-keyframes change-colors-1 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+@-moz-keyframes change-colors-1 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+@-o-keyframes change-colors-1 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+@keyframes change-colors-1 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+.bottom-right{
+    background: linear-gradient(300deg, #2400FF, #b923FF);
+    background-size: 400% 400%;
+
+    filter: blur(200px);
+
+    bottom: 0%;
+    left: 0%;
+
+    width: 300px;
+    height: 300px;
+
+    -webkit-animation: change-colors-2 14s ease infinite;
+    -moz-animation: change-colors-2 14s ease infinite;
+    -o-animation: change-colors-2 14s ease infinite;
+    animation: change-colors-2 14s ease infinite;
+}
+
+@-webkit-keyframes change-colors-2 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+@-moz-keyframes change-colors-2 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+@-o-keyframes change-colors-2 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+
+@keyframes change-colors-2 {
+    0%{background-position:0% 23%}
+    50%{background-position:100% 78%}
+    100%{background-position:0% 23%}
+}
+

@@ -11,8 +11,8 @@ const ServicesTemplate = () => {
                     href="#"
                 >
                     <div dangerouslySetInnerHTML={{ __html: service.icon }} className='mb-4 w-32' />
-                    <h2 className="mt-4 text-xl font-bold text-white">{service.service_name}</h2>
-                    <p className="mt-1 text-sm text-gray-300">{service.service_desc}</p>
+                    <h2 className="mt-4 text-xl font-bold text-gray-800 dark:text-white">{service.service_name}</h2>
+                    <p className="mt-4 text-sm text-gray-300">{service.service_desc}</p>
                 </a>
             ))}
         </div>

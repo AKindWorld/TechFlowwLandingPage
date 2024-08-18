@@ -139,6 +139,27 @@
   }
 }
 
+/* .button-arrow:hover{
+  animation: button-arrow-animation ease-in 0.5s;
+}
+
+@keyframes button-arrow-animation {
+  0%{
+    opacity: 100%;
+    x: 0;
+    y: 0;
+  }
+  50%{
+    opacity: 0%;
+    x: 20;
+    y: 0;
+  }
+  100%{
+    opacity: 100%;
+    x: -40;
+    y: 0;
+  }
+}*/
 
 .violet-svg-top{
   width: 80vw;

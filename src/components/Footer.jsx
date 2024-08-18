@@ -22,7 +22,7 @@ const Footer = () => {
                         <button
                             className="mt-1 w-[90vw] bg-gradient-to-r from-[#3F0] to-[#16D5E1] px-6 py-3 text-xs md:text-sm font-bold uppercase tracking-wide text-white transition-none sm:mt-0 sm:w-auto sm:shrink-0 justify-end"
                         >
-                            Contact Us
+                            <a href='/contact'>Contact Us</a>
                         </button>
                     </div>
 
@@ -124,15 +124,15 @@ const Footer = () => {
 
                     <ul className="mt-6 space-y-4 text-sm ">
                         <li>
-                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> About Us </a>
+                        <a href="/#about" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> About Us </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Services </a>
+                        <a href="/#services" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Services </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Contact </a>
+                        <a href="/contact" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Contact </a>
                         </li>
                     </ul>
                     </div>
@@ -142,15 +142,15 @@ const Footer = () => {
 
                     <ul className="mt-6 space-y-4 text-sm">
                         <li>
-                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Profile</a>
+                        <a href="/portfolio" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Profile</a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Process Overview </a>
+                        <a href="/portfolio" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Process Overview </a>
                         </li>
 
                         <li>
-                        <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Achievements </a>
+                        <a href="/portfolio" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Achievements </a>
                         </li>
                     </ul>
                     </div>
@@ -292,7 +292,7 @@ const Footer = () => {
                 </div>
                 </div>
 
-                <div className="mt-8 border-t border-gray-100 pt-8">
+                <div className="mt-8 border-t border-gray-400 dark:border-gray-100 pt-8">
                 <div className="sm:flex sm:justify-between">
                     <p className="text-xs text-gray-500 dark:text-zinc-300">&copy; 2024 TechFloww. All rights reserved.</p>
 
