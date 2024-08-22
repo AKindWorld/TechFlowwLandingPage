@@ -1,0 +1,34 @@
+{
+    "services": [
+        {
+            "icon": "icon1.svg",
+            "service_name": "Application Development",
+            "service_desc": "We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients."
+        },
+        {
+            "icon": "WebIcon.svg",
+            "service_name": "Cloud Services",
+            "service_desc": "Description"
+        },
+        {
+            "icon": "WebIcon.svg",
+            "service_name": "Maintainence & Support",
+            "service_desc": "Description"
+        },
+        {
+            "icon": "WebIcon.svg",
+            "service_name": "Data Analytics & BI",
+            "service_desc": "Description"
+        },
+        {
+            "icon": "WebIcon.svg",
+            "service_name": "DevOps",
+            "service_desc": "Description"
+        },
+        {
+            "icon": "WebIcon.svg",
+            "service_name": "Quality Engineering",
+            "service_desc": "Description"
+        }
+    ]
+}
