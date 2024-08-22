@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import AWS from 'aws-sdk';
-import data from '../assets/Profiles_Data.json';
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { ScanCommand } from '@aws-sdk/lib-dynamodb';
 
 const PortfolioProfiles = () => {
     const [boardMembers, setBoardMembers] = useState([]);
@@ -9,20 +9,21 @@ const PortfolioProfiles = () => {
 
     useEffect(() => {
         const fetchDataFromTable = async (tableName) => {
-            AWS.config.update({
-                accessKeyId: import.meta.env.VITE_REACT_APP_DB_ACCESS_KEY_ID,
-                secretAccessKey: import.meta.env.VITE_REACT_APP_DB_SECRET_ACCESS_KEY,
+            const client = new DynamoDBClient({
                 region: import.meta.env.VITE_REACT_APP_DB_REGION,
+                credentials: {
+                    accessKeyId: import.meta.env.VITE_REACT_APP_DB_ACCESS_KEY_ID,
+                    secretAccessKey: import.meta.env.VITE_REACT_APP_DB_SECRET_ACCESS_KEY,
+                },
             });
-
-            const docClient = new AWS.DynamoDB.DocumentClient();
 
             const params = {
                 TableName: tableName,
             };
 
             try {
-                const data = await docClient.scan(params).promise();
+                const command = new ScanCommand(params);
+                const data = await client.send(command);
                 return data.Items;
             } catch (err) {
                 console.error('Error fetching data from DynamoDB:', err);
