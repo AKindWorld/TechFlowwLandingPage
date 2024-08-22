@@ -8,15 +8,15 @@ const Portfolio = () => {
     const renderContent = () => {
         switch (selectedTab) {
             case 'Profiles':
-                return  <div className='h-auto content-center poppins-bold text-2xl'>
+                return  <div className='h-auto content-center poppins-bold text-2xl' id="#profiles">
                             <PortfolioProfiles/>
                         </div>;
             case 'Process Overview':
-                return  <div className='h-auto content-center text-center poppins-bold text-2xl'>
+                return  <div className='h-auto content-center text-center poppins-bold text-2xl' id="process">
                             Process Overview Content
                         </div>;
             case 'Achievements':
-                return  <div className='h-auto content-center poppins-bold text-2xl'>
+                return  <div className='h-auto content-center poppins-bold text-2xl' id="testimonials">
                             <Testimonials/>
                         </div>;
             default:

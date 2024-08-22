@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import Background from '../components/Background';
 import { Helmet } from 'react-helmet';
 import { useRef, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
             <TechStack />
             <Testimonials />
             <Footer />
+            <Analytics />
             <Background />
             {/* <div className='bg-colors-svg'>
                 <div className='violet-svg-top'>

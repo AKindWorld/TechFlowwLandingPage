@@ -1,7 +1,7 @@
 {
     "boardmembers": [
         {
-            "image": "boardmember1.jpg",
+            "image": "https://techfloww-assets.s3.eu-north-1.amazonaws.com/ProfilePicDefault.png",
             "name": "John Doe",
             "position": "Chairman",
             "skills": ["Leadership", "Strategy"],

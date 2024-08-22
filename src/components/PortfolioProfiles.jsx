@@ -1,102 +1,143 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AWS from 'aws-sdk';
 import data from '../assets/Profiles_Data.json';
 
 const PortfolioProfiles = () => {
+    const [boardMembers, setBoardMembers] = useState([]);
+    const [technicalExperts, setTechnicalExperts] = useState([]);
+    const [technicalMembers, setTechnicalMembers] = useState([]);
+
+    useEffect(() => {
+        const fetchDataFromTable = async (tableName) => {
+            AWS.config.update({
+                accessKeyId: import.meta.env.VITE_REACT_APP_DB_ACCESS_KEY_ID,
+                secretAccessKey: import.meta.env.VITE_REACT_APP_DB_SECRET_ACCESS_KEY,
+                region: import.meta.env.VITE_REACT_APP_DB_REGION,
+            });
+
+            const docClient = new AWS.DynamoDB.DocumentClient();
+
+            const params = {
+                TableName: tableName,
+            };
+
+            try {
+                const data = await docClient.scan(params).promise();
+                return data.Items;
+            } catch (err) {
+                console.error('Error fetching data from DynamoDB:', err);
+                return [];
+            }
+        };
+
+        const fetchAllData = async () => {
+            const boardMembersData = await fetchDataFromTable('profiles_boardmembers');
+            const technicalExpertsData = await fetchDataFromTable('profiles_technicalexperts');
+            const technicalMembersData = await fetchDataFromTable('profiles_technicalmembers');
+
+            setBoardMembers(boardMembersData);
+            setTechnicalExperts(technicalExpertsData);
+            setTechnicalMembers(technicalMembersData);
+        };
+
+        fetchAllData();
+    }, []);
+    
     return (
         <div>
             <h3 className="text-center text-sm poppins-semibold text-teal-500 sm:text-lg pb-4 mt-8">
                     Board Members
             </h3>
             <div className='mt-2 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-                {data.boardmembers.map((boardmembers, index) => (
-                    <div className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10">
-                    <img src={boardmembers.image} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
-                    <div className="space-y-4 text-center divide-y divide-gray-700 dark:divide-gray-300">
-                        <div className="my-2 space-y-1">
-                            <h2 className="text-base font-semibold">{boardmembers.name}</h2>
-                            <p className="px-5 text-xs text-gray-400 dark:text-gray-600">{boardmembers.position}</p>
+                {boardMembers.map((member, index) => (
+                        <div key={index} className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10">
+                            <img src={member.image} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
+                            <div className="space-y-4 text-center divide-y divide-gray-700 dark:divide-gray-300">
+                                <div className="my-2 space-y-1">
+                                    <h2 className="text-base font-semibold">{member.name}</h2>
+                                    <p className="px-5 text-xs text-gray-400 dark:text-gray-600">{member.position}</p>
+                                </div>
+                                <div className="flex justify-center pt-2 space-x-4 align-center">
+                                    <a rel="noopener noreferrer" href={member.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                        <img
+                                            alt=""
+                                            src={member.link1iconsrc}
+                                            className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                        />
+                                    </a>
+                                    <a rel="noopener noreferrer" href={member.link2} aria-label="Link2" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                        <img
+                                            alt=""
+                                            src={member.link2iconsrc}
+                                            className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                        />
+                                    </a>
+                                    <a rel="noopener noreferrer" href={member.link3} aria-label="Link3" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                        <img
+                                            alt=""
+                                            src={member.link3iconsrc}
+                                            className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                        />
+                                    </a>
+                                    <a rel="noopener noreferrer" href={member.link4} aria-label="Link4" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                        <img
+                                            alt=""
+                                            src={member.link4iconsrc}
+                                            className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex justify-center pt-2 space-x-4 align-center">
-                            <a rel="noopener noreferrer" href={boardmembers.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
-                                <img
-                                    alt=""
-                                    src={boardmembers.link1iconsrc}
-                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
-                                />
-                            </a>
-                            <a rel="noopener noreferrer" href={boardmembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
-                                <img
-                                    alt=""
-                                    src={boardmembers.link2iconsrc}
-                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
-                                />
-                            </a>
-                            <a rel="noopener noreferrer" href={boardmembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
-                                <img
-                                    alt=""
-                                    src={boardmembers.link4iconsrc}
-                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
-                                />
-                            </a>
-                            <a rel="noopener noreferrer" href={boardmembers.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
-                                <img
-                                    alt=""
-                                    src={boardmembers.link4iconsrc}
-                                    className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                    </div>
                 ))}
             </div>
             <h3 className="text-center text-sm poppins-semibold text-teal-500 sm:text-lg pb-4 mt-16">
                     Technical Experts
             </h3>
             <div className='mt-2 sm:columns-2 sm:gap-6 lg:columns-2 lg:gap-8 p-10 m-16'>
-                {data.technicalexperts.map((technicalexperts, index) => (
+                {technicalExperts.map((expert, index) => (
                     <div className="mb-8 sm:break-inside-avoid" key={index}>
                         <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
                             <div className="flex items-center gap-4">
                                 <img
                                     alt=""
-                                    src={technicalexperts.image}
+                                    src={expert.image}
                                     className="size-14 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                                 <div>
-                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{technicalexperts.name}</p>
-                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{technicalexperts.position}</p>
+                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{expert.name}</p>
+                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{expert.position}</p>
                                 </div>
                             </div>
                             <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
-                                {technicalexperts.skills[1]}
+                                {expert.skills[1]}
                             </p>
                             <div className="flex justify-center pt-2 space-x-4 align-center">
-                                <a rel="noopener noreferrer" href={technicalexperts.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={expert.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalexperts.link1iconsrc}
+                                        src={expert.link1iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
-                                <a rel="noopener noreferrer" href={technicalexperts.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={expert.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalexperts.link2iconsrc}
+                                        src={expert.link2iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
-                                <a rel="noopener noreferrer" href={technicalexperts.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={expert.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalexperts.link4iconsrc}
+                                        src={expert.link3iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
-                                <a rel="noopener noreferrer" href={technicalexperts.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={expert.link4} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalexperts.link4iconsrc}
+                                        src={expert.link4iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
@@ -109,49 +150,49 @@ const PortfolioProfiles = () => {
                     Technical Team Members
             </h3>
             <div className='mt-2 sm:columns-2 sm:gap-6 lg:columns-4 lg:gap-8 p-10 m-16'>
-                {data.technicalteammembers.map((technicalteammembers, index) => (
+                {technicalMembers.map((member, index) => (
                     <div className="mb-8 sm:break-inside-avoid" key={index}>
                         <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
                             <div className="flex items-center gap-4">
                                 <img
                                     alt=""
-                                    src={technicalteammembers.image}
+                                    src={member.image}
                                     className="size-14 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                 />
                                 <div>
-                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{technicalteammembers.name}</p>
-                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{technicalteammembers.position}</p>
+                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{member.name}</p>
+                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{member.position}</p>
                                 </div>
                             </div>
                             <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
-                                {technicalteammembers.skills[1]}
+                                {member.skills[1]}
                             </p>
                             <div className="flex justify-center pt-2 space-x-4 align-center">
-                                <a rel="noopener noreferrer" href={technicalteammembers.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={member.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalteammembers.link1iconsrc}
+                                        src={member.link1iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
-                                <a rel="noopener noreferrer" href={technicalteammembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={member.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalteammembers.link2iconsrc}
+                                        src={member.link2iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
-                                <a rel="noopener noreferrer" href={technicalteammembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={member.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalteammembers.link4iconsrc}
+                                        src={member.link3iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>
-                                <a rel="noopener noreferrer" href={technicalteammembers.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                <a rel="noopener noreferrer" href={member.link4} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
                                     <img
                                         alt=""
-                                        src={technicalteammembers.link4iconsrc}
+                                        src={member.link4iconsrc}
                                         className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
                                     />
                                 </a>

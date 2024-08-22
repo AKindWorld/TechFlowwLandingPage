@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet';
+import { Analytics } from '@vercel/analytics/react';
 
 const ProductDemo = () => {
     return (
@@ -21,6 +22,7 @@ const ProductDemo = () => {
             </div>
             <div>
                 <Footer />
+                <Analytics />
             </div>
         </>
     );

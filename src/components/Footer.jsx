@@ -142,15 +142,15 @@ const Footer = () => {
 
                     <ul className="mt-6 space-y-4 text-sm">
                         <li>
-                        <a href="/portfolio" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Profile</a>
+                        <a href="/portfolio#profiles" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Profile</a>
                         </li>
 
                         <li>
-                        <a href="/portfolio" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Process Overview </a>
+                        <a href="/portfolio#process" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Process Overview </a>
                         </li>
 
                         <li>
-                        <a href="/portfolio" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Achievements </a>
+                        <a href="/portfolio#testimonials" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Achievements </a>
                         </li>
                     </ul>
                     </div>
