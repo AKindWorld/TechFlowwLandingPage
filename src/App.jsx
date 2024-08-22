@@ -6,7 +6,6 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import { Analytics } from "@vercel/analytics/react"
 
 import Home from './Pages/Home'
 import ProductDemo from './Pages/ProductDemo'
