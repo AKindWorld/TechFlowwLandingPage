@@ -33,7 +33,7 @@ const Hero = () => {
                         <a href='#services' className='text-black font-bold mt-6 px-6 underline dark:text-[#D4C0FF]/50 dark:hover:text-[#D4C0FF] text-xs sm:text-base md:text-lg'>Learn more</a>
                     </div>
                 </div>
-                <div className='justify-between image-container sm:hidden md:hidden lg:block'>
+                <div className='justify-between image-container hidden md:hidden lg:block'>
                     {/* <svg className='mr-10' width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M499.267 291.404H0.732669C0.538353 291.404 0.351997 291.328 0.214595 291.194C0.0771925 291.06 0 290.878 0 290.688C0.00406537 290.5 0.08256 290.32 0.219091 290.187C0.355622 290.053 0.539628 289.977 0.732669 289.973H499.267C499.46 289.977 499.644 290.053 499.781 290.187C499.917 290.32 499.996 290.5 500 290.688C500 290.878 499.923 291.06 499.785 291.194C499.648 291.328 499.462 291.404 499.267 291.404Z" fill="#D1D3D4"/>
                         <path d="M462.968 0.761719H46.6044C41.8806 0.761719 38.0513 4.50163 38.0513 9.11506V251.144C38.0513 255.758 41.8806 259.497 46.6044 259.497H462.968C467.692 259.497 471.522 255.758 471.522 251.144V9.11506C471.522 4.50163 467.692 0.761719 462.968 0.761719Z" fill="white"/>
