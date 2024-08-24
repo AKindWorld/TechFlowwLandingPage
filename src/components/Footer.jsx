@@ -190,6 +190,10 @@ const Footer = () => {
                         </li>
 
                         <li>
+                        <a href="https://www.linkedin.com/company/techfloww-it-services/" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> LinkedIn </a>
+                        </li>
+
+                        <li>
                         <a href="#" className="text-gray-700 dark:text-gray-200 transition hover:opacity-75"> Instagram </a>
                         </li>
                     </ul>
