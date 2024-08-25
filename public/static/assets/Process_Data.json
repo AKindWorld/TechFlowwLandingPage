@@ -1,0 +1,44 @@
+[
+    {
+        "phase_number": 1,
+        "phase_name": "Requirements Gathering",
+        "phase_description": "Gather and document the requirements for the software project.",
+        "phase_desc_long": "During the requirements gathering phase, the team collects and documents all the necessary information about the software project. This includes understanding the needs of the stakeholders, identifying functional and non-functional requirements, and documenting them for further development.",
+        "phase_time_taken": "2 weeks"
+    },
+    {
+        "phase_number": 2,
+        "phase_name": "Design",
+        "phase_description": "Create the high-level and detailed design of the software.",
+        "phase_desc_long": "In the design phase, the team creates a comprehensive plan for the software. This includes defining the architecture, data models, user interfaces, and other design elements. The goal is to create a blueprint that guides the implementation phase.",
+        "phase_time_taken": "1 week"
+    },
+    {
+        "phase_number": 3,
+        "phase_name": "Implementation",
+        "phase_description": "Write the code and develop the software according to the design.",
+        "phase_desc_long": "During the implementation phase, the team translates the design into actual code. This involves writing and testing the software components, integrating them, and ensuring that they work together as intended.",
+        "phase_time_taken": "4 weeks"
+    },
+    {
+        "phase_number": 4,
+        "phase_name": "Testing",
+        "phase_description": "Test the software for bugs, errors, and ensure it meets the requirements.",
+        "phase_desc_long": "The testing phase focuses on identifying and fixing any issues or bugs in the software. It involves various types of testing, such as unit testing, integration testing, and system testing, to ensure that the software functions correctly and meets the specified requirements.",
+        "phase_time_taken": "2 weeks"
+    },
+    {
+        "phase_number": 5,
+        "phase_name": "Deployment",
+        "phase_description": "Deploy the software to the production environment.",
+        "phase_desc_long": "During the deployment phase, the software is released and made available to the end-users. This includes activities such as configuring the production environment, installing the software, and ensuring its proper functioning in the live environment.",
+        "phase_time_taken": "1 week"
+    },
+    {
+        "phase_number": 6,
+        "phase_name": "Maintenance",
+        "phase_description": "Provide ongoing support, bug fixes, and updates to the software.",
+        "phase_desc_long": "The maintenance phase involves providing ongoing support and maintenance for the software. This includes addressing any issues or bugs reported by users, applying updates and patches, and making enhancements or modifications as required.",
+        "phase_time_taken": "Ongoing"
+    }
+]

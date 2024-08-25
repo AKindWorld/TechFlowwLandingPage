@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PortfolioProfiles from './PortfolioProfiles';
+import ProcessOverview from './ProcessOverview';
 import Testimonials from './Testimonials';
 
 const Portfolio = () => {
@@ -13,7 +14,7 @@ const Portfolio = () => {
                         </div>;
             case 'Process Overview':
                 return  <div className='h-auto content-center text-center poppins-bold text-2xl' id="process">
-                            Process Overview Content
+                           <ProcessOverview/>
                         </div>;
             case 'Achievements':
                 return  <div className='h-auto content-center poppins-bold text-2xl' id="testimonials">
