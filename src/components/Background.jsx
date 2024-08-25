@@ -10,7 +10,7 @@ const Background = () => {
                 <div className="top-left absolute w-20 h-20 rounded-full animate-bounce"></div>
                 <div className="bottom-left absolute w-20 h-20 rounded-full animate-ping"></div>
             </div> */}
-            <div className='bg-colors-svg'>
+            <div className='bg-colors-svg hidden lg:fixed lg:block'>
                 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_704_29)">
                         <g className="bg_circle" filter="url(#filter0_f_704_29)">
