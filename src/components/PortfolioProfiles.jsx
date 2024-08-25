@@ -52,7 +52,7 @@ const PortfolioProfiles = () => {
             <div className='mt-2 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
                 {boardMembers.map((member, index) => (
                         <div key={index} className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10">
-                            <img src={member.image} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
+                            <img src={member.image} alt="" className="w-24 h-24 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
                             <div className="space-y-4 text-center divide-y divide-gray-700 dark:divide-gray-300">
                                 <div className="my-2 space-y-1">
                                     <h2 className="text-base font-semibold">{member.name}</h2>

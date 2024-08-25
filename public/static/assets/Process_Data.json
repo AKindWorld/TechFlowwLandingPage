@@ -1,7 +1,7 @@
 [
     {
         "phase_number": 1,
-        "phase_name": "Requirements Gathering",
+        "phase_name": "Planning",
         "phase_description": "Gather and document the requirements for the software project.",
         "phase_desc_long": "During the requirements gathering phase, the team collects and documents all the necessary information about the software project. This includes understanding the needs of the stakeholders, identifying functional and non-functional requirements, and documenting them for further development.",
         "phase_time_taken": "2 weeks"

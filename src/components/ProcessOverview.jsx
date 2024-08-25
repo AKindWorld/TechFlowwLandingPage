@@ -19,25 +19,27 @@ function ProcessOverview() {
             <div className="mx-6 my-8 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
                 <div className="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
-                    <img src="/static/assets/SDLC_placeholder.png" alt="Software Development Life Cycle"></img>
+                    <img className="dark:invert pointer-events-none" src="/static/assets/SDLC.png" alt="Software Development Life Cycle"></img>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-1">
                     {data.map((item, index) => (
                         <div
                         key={index}
-                        className={`flex items-start text-left rounded-xl border border-[#D4C0FF] p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring ${activeIndex === index ? 'dropdown-active' : ''}`}
+                        className={`flex group items-start text-left rounded-xl border border-none hover:border-teal-200 dark:hover:border-[#D4C0FF] p-4 shadow-sm hover:ring-1 hover:ring-teal-200 dark:hover:ring-[#D4C0FF] focus:outline-none focus:ring ${activeIndex === index ? 'dropdown-active bg-teal-200 dark:bg-[#D4C0FF]' : 'bg-white dark:bg-[#181825]'}`}
                         onClick={() => handleClick(index)}
                         >
                             <span className="inline-block rounded-lg bg-gray-50 dark:bg-gray-700 p-3 px-4 mt-4 text-sm md:text-md lg:text-lg">
                                 {item.phase_number.toString().padStart(2, '0')}
                             </span>
                             <div className='p-2 ml-2'>
-                                <h2 className="mt-2 font-bold text-base md:text-md lg:text-lg">{item.phase_name}</h2>
+                                <h2 className={`mt-2 font-bold text-base md:text-md lg:text-lg ${activeIndex === index ? 'text-gray-800' : ''}`}>
+                                    {item.phase_name}
+                                </h2>
                                 <p className={`font-light text-sm md:text-base lg:text-base min-w-lg' ${activeIndex === index ? 'hidden' : 'block'}`}>
                                     {item.phase_description}
                                 </p>
-                                <p className={`sm:mt-1 text-sm md:text-base mt-2 text-gray-400 font-medium ${activeIndex === index ? 'block' : 'hidden'}`}>
+                                <p className={`sm:mt-1 text-sm md:text-base mt-2 text-gray-600 dark:text-gray-700 font-medium ${activeIndex === index ? 'block group-bg-teal-200' : 'hidden'}`}>
                                     {item.phase_desc_long}
                                 </p>
                             </div>

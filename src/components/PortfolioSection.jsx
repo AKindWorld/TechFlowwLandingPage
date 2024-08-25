@@ -26,7 +26,7 @@ const Portfolio = () => {
     };
 
     const getTabClassName = (tabName) => {
-        return `shrink-0 rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-teal-200 hover:text-gray-700 ${selectedTab === tabName ? 'bg-teal-300' : ''}`;
+        return `shrink-0 rounded-lg p-4 text-sm font-medium text-gray-500 dark:text-gray-200 hover:bg-teal-200 hover:text-gray-700 ${selectedTab === tabName ? 'bg-teal-300 dark:text-gray-800' : ''}`;
     };
 
     return (
