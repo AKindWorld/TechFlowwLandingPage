@@ -142,7 +142,7 @@ function NavBar() {
                         </li>
 
                         <li>
-                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="/contact"> Contact Us </a>
+                        <a className="text-gray-800 transition hover:text-gray-500/75 dark:text-gray-300 dark:hover:text-[#D4C0FF]/75" href="/pricing"> Pricing </a>
                         </li>
                     </ul>
                     </nav>
@@ -153,7 +153,7 @@ function NavBar() {
                         className="rounded-md bg-gradient-to-r from-[#FF7A00] to-[#FFD954] px-5 py-2.5 text-sm poppins-medium text-black shadow dark:text-[#fff]"
                         href="/demo"
                         >
-                        DEMO OUR PRODUCTS
+                        CONTACT US
                         </a>
                     </div>
 

@@ -1,201 +1,241 @@
 import React, { useState } from 'react';
 
 const ContactForm = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [option, setOption] = useState('');
-    const [message, setMessage] = useState('');
+    const [submit, setSubmit] = useState(false);
+    
+    const [formData, setFormData] = useState({
+        "entry.2056271310": "",
+        "entry.381005483": "",
+        "entry.942104210": "",
+        "entry.2053105548": "",
+        "entry.830057170": ""
+    });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleInputData = (input) => (e) => {
+        const { value } = e.target;
 
-        // Send email using emailjs library
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-            .then((result) => {
-                console.log(result.text);
-                // Reset form fields
-                setName('');
-                setEmail('');
-                setPhone('');
-                setOption('');
-                setMessage('');
-            }, (error) => {
-                console.log(error.text);
-            });
+        setFormData((prevState) => ({
+            ...prevState,
+            [input]: value
+        }));
     };
 
-    
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setSubmit(true);
+
+        
+
+        let secreturl = import.meta.env.VITE_REACT_APP_CONTACT_FORM_URL;
+        let url = `https://docs.google.com/forms/d/e/${secreturl}/formResponse?entry.2056271310=${formData["entry.2056271310"]}&entry.381005483=${formData["entry.381005483"]}&entry.942104210=${formData["entry.942104210"]}&entry.2053105548=${formData["entry.2053105548"]}&entry.830057170=${formData["entry.830057170"]}`
+
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            mode: 'no-cors',
+        });
+    }
+
     return (
-        <section className="h-screen">
+        <section className="h-auto">
             <div className="mx-auto max-w-screen-xl px-4 py-28 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
                     <div className="lg:col-span-2 lg:py-12">
-                        <p className="max-w-xl text-lg">
+                        <img src="/static/assets/Media/Logo-Text-Light-Transparent.png" alt="Logo" className="max-w-[15vw]"/>
+                        <p className="max-w-xl text-2xl text-gray-800 dark:text-gray-200 font-bold">
                             TechFloww IT Services
-                            <br></br>
-                            email
                         </p>
 
                         <div className="mt-8">
-                            <a href="#" className="text-2xl font-bold text-[#E29016]"> phone number </a>
-
-                            <address className="mt-2 not-italic">office address</address>
+                            <span className='text-lg font-bold text-gray-500 dark:text-gray-300 py-4'> Email: <br></br>
+                                <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> info@techflowwitservices.in </a>
+                            </span>
+                            <br></br>
+                            <span className='text-lg font-bold text-gray-500 dark:text-gray-300 py-4'> Phone Number: <br></br>
+                                <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> (pending...) </a>
+                            </span>
+                            <br></br>
+                            <span className='text-lg font-bold text-gray-500 dark:text-gray-300 py-4'> Office Address: <br></br>
+                                <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> (pending...) </a>
+                            </span>
                         </div>
                     </div>
 
                     <div className="rounded-lg bg-white dark:bg-[#181825] p-8 shadow-lg lg:col-span-3 lg:p-12">
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                                <label className="sr-only" htmlFor="name">Name</label>
-                                <input
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] focus:outline-none focus:border-[#D4C0FF] focus:ring-1"
-                                    placeholder="Name"
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
+                        {submit ? (
+                            <div className="afterForm">
+                                <span className='text-xl font-bold'>Submission Successful!</span>
+                                <p className='text-base font-medium mt-4 text-gray-600'>
+                                    We will get back to you soon at <span className='text-gray-800 font-bold underline'>{formData["entry.381005483"]}</span> and <span className='text-gray-800 font-bold underline'>{formData["entry.942104210"]}</span>. 
+                                </p>
                             </div>
-
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                <div>
-                                    <label className="sr-only" htmlFor="email">Email</label>
+                        ) : (
+                            <form onSubmit={handleSubmit} target="_self" className="space-y-4">
+                                <fieldset>
+                                    <label className="sr-only" htmlFor="entry.2056271310">Name</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                        placeholder="Email address"
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] focus:outline-none focus:border-[#D4C0FF] focus:ring-1"
+                                        placeholder="Name"
+                                        type="text"
+                                        id="name"
+                                        name="entry.2056271310"
+                                        onChange={handleInputData("entry.2056271310")}
+                                        value={formData["entry.2056271310"]}
+                                        autoComplete={false}
                                     />
-                                </div>
+                                </fieldset>
 
-                                <div>
-                                    <label className="sr-only" htmlFor="phone">Phone</label>
-                                    <input
+                                <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div>
+                                        <label className="sr-only" htmlFor="entry.381005483">Email</label>
+                                        <input
+                                            required
+                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            placeholder="Email address"
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            value={formData["entry.381005483"]}
+                                            onChange={handleInputData("entry.381005483")}
+                                            autoComplete={false}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label className="sr-only" htmlFor="entry.942104210">Phone</label>
+                                        <input
+                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            placeholder="Phone Number"
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            value={formData["entry.942104210"]}
+                                            onChange={handleInputData("entry.942104210")}
+                                            autoComplete={false}
+                                        />
+                                    </div>
+                                </fieldset>
+
+                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">What are you enquiring about?</div>
+
+                                <fieldset className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
+                                    <div>
+                                        <label
+                                            htmlFor="entry.2053105548_serviceenquiries"
+                                            className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
+                                            tabIndex="0"
+                                        >
+                                            <input
+                                                className="sr-only"
+                                                id="entry.2053105548_serviceenquiries"
+                                                type="radio"
+                                                tabIndex="-1"
+                                                name="entry.2053105548"
+                                                value="Service Enquiries"
+                                                checked={formData["entry.2053105548"] === 'Service Enquiries'}
+                                                onChange={handleInputData("entry.2053105548")}
+                                            />
+
+                                            <span className="text-sm"> Service Enquiry </span>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            htmlFor="entry.2053105548_custompricing"
+                                            className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
+                                            tabIndex="0"
+                                        >
+                                            <input
+                                                className="sr-only"
+                                                id="entry.2053105548_custompricing"
+                                                type="radio"
+                                                tabIndex="-1"
+                                                name="entry.2053105548"
+                                                value="Custom Pricing"
+                                                checked={formData["entry.2053105548"] === 'Custom Pricing'}
+                                                onChange={handleInputData("entry.2053105548")}
+                                            />
+
+                                            <span className="text-sm"> Custom Pricing </span>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            htmlFor="entry.2053105548_helpandsupport"
+                                            className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
+                                            tabIndex="0"
+                                        >
+                                            <input
+                                                className="sr-only"
+                                                id="entry.2053105548_helpandsupport"
+                                                type="radio"
+                                                tabIndex="-1"
+                                                name="entry.2053105548"
+                                                value="Help And Support"
+                                                checked={formData["entry.2053105548"] === 'Help And Support'}
+                                                onChange={handleInputData("entry.2053105548")}
+                                            />
+
+                                            <span className="text-sm"> Help & Support </span>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            htmlFor="entry.2053105548_other"
+                                            className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
+                                            tabIndex="0"
+                                        >
+                                            <input
+                                                className="sr-only"
+                                                id="entry.2053105548_other"
+                                                type="radio"
+                                                tabIndex="-1"
+                                                name="entry.2053105548"
+                                                value="Other"
+                                                checked={formData["entry.2053105548"] === 'Other'}
+                                                onChange={handleInputData("entry.2053105548")}
+                                            />
+
+                                            <span className="text-sm"> Other </span>
+                                        </label>
+                                    </div>
+
+                                </fieldset>
+                                
+                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">Briefly enter some details about the reason for contacting us:</div>
+
+                                <fieldset>
+                                    <label className="sr-only" htmlFor="entry.830057170">Details</label>
+
+                                    <textarea
+                                        required
                                         className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                        placeholder="Phone Number"
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
-                                    />
-                                </div>
-                            </div>
+                                        placeholder="Details"
+                                        rows="8"
+                                        id="message"
+                                        name="message"
+                                        value={formData["entry.830057170"]}
+                                        onChange={handleInputData("entry.830057170")}
+                                        autoComplete={false}
+                                    ></textarea>
+                                </fieldset>
 
-                            <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
-                                <div>
-                                    <label
-                                        htmlFor="Option1"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
+                                <div className="mt-4">
+                                    <button
+                                        type="submit"
+                                        className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
                                     >
-                                        <input
-                                            className="sr-only"
-                                            id="Option1"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 1"
-                                            checked={option === 'Option 1'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 1 </span>
-                                    </label>
+                                        Submit
+                                    </button>
                                 </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option2"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option2"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 2"
-                                            checked={option === 'Option 2'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 2 </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option3"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option3"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 3"
-                                            checked={option === 'Option 3'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 3 </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option4"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option4"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 4"
-                                            checked={option === 'Option 4'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 4 </span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="sr-only" htmlFor="message">Message</label>
-
-                                <textarea
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                    placeholder="Message"
-                                    rows="8"
-                                    id="message"
-                                    name="message"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                ></textarea>
-                            </div>
-
-                            <div className="mt-4">
-                                <button
-                                    type="submit"
-                                    className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                                >
-                                    Send Enquiry
-                                </button>
-                            </div>
-                        </form>
+                            </form>
+                        )}
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet';
 import { Analytics } from '@vercel/analytics/react';
+import Background from '../components/Background';
 
 const ProductDemo = () => {
     return (
@@ -23,6 +24,9 @@ const ProductDemo = () => {
             <div>
                 <Footer />
                 <Analytics />
+            </div>
+            <div>
+                <Background />
             </div>
         </>
     );
