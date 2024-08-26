@@ -125,6 +125,13 @@
   z-index: -1;
 }
 
+.bg-colors-svg-m {
+  position: fixed;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+}
+
 .bg_circle{
   transform-origin: 50% 50%;
   animation: rotate 10s linear infinite;

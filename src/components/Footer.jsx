@@ -4,7 +4,7 @@ import logo from '/static/assets/Media/Logo-Text-Light-Transparent.png'
 const Footer = () => {
     return (
         <footer className="">
-            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 mb-56 md:mb-0">
                 <div className="block lg:items-start lg:gap-8">
 
                 <div className="mt-8 grid grid-cols-4 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">

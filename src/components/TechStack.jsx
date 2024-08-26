@@ -43,7 +43,7 @@ const TechStack = () => {
                     <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-gray-300 group-hover:text-[#2396ED]/80 group-hover:text-2xl group-hover:font-medium transition-all sm:text-xl">Docker</h3>
                 </a>
                 <a className="group block text-center hover:fill-[#E6AD10] pt-4 pb-4 md:p-0" target='_blank' rel="noopener noreferrer">
-                    <img className="m-auto grayscale group-hover:grayscale-0" src="/static/assets/Icons/PowerBiIcon.svg" alt="Docker Logo"/>
+                    <img className="m-auto grayscale group-hover:grayscale-0" src="/static/assets/Icons/PowerBiIcon.svg" alt="PowerBI Logo"/>
                     <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-gray-300 group-hover:text-[#E6AD10]/80 group-hover:text-2xl group-hover:font-medium transition-all sm:text-xl">PowerBI</h3>
                 </a>         
             </div>
