@@ -11,19 +11,19 @@ const Hero = () => {
                 <NavBar />
             </div>
 
-            <div className="flex flex-col-reverse md:flex-row hero pl-0 h-[100vh] items-center justify-center">
-                <div className='flex-auto text-container mx-10 lg:mx-10 md:mx-10 max-w-2xl py-12 md:py-32 sm:pb-48 lg:py-5'>
+            <div className="flex flex-col-reverse lg:flex-row hero pl-0 md:h-[100vh] items-center justify-center h-auto">
+                <div className='flex-auto text-container mx-10 lg:mx-10 md:mx-10 max-w-2xl pb-12 pt-8 md:pt-12 lg:py-32 sm:pb-48'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black dark:text-[#D4C0FF] poppins-bold'>
                         Flow with 
                         <span className='lavishly-yours-regular text-4xl xl:text-8xl lg:text-6xl md:text-5xl'> innovation,</span> <br></br> 
                         Lead with TechFloww
                     </h1>
                     <span>
-                        <p className='mt-6 text-md lg:text-lg font-medium leading-8 poppins-regular max-w-xl'>
+                        <p className='mt-6 text-base md:text-md lg:text-lg font-medium leading-6 md:leading-8 poppins-regular max-w-xl'>
                             We are a team of highly motivated and skilled developers dedicated to delivering only the best software.
                         </p>
                     </span>
-                    <div className='flex items-center'>
+                    <div className='flex items-center flex-col sm:flex-row'>
                         <a href='/contact'>
                             <button className='flex items-center bg-gradient-to-r from-[#3F0] to-[#16D5E1] hover:bg-black transition-all border-2 border-[#FFF]/10 dark:border-[#FFF]/10 hover:border-[#000] hover:border-2 dark:hover:border-[#FFF] text-black dark:text-gray-200 mt-6 font-bold py-4 px-4 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg'>
                                 CONTACT US
@@ -35,7 +35,7 @@ const Hero = () => {
                         <a href='#services' className='text-black font-bold mt-6 px-6 underline dark:text-[#D4C0FF]/50 dark:hover:text-[#D4C0FF] text-xs sm:text-base md:text-lg'>Learn more</a>
                     </div>
                 </div>
-                <div className='justify-between image-container md:hidden lg:block'>
+                <div className='justify-between image-container lg:block'>
                     {/* <svg className='mr-10' width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M499.267 291.404H0.732669C0.538353 291.404 0.351997 291.328 0.214595 291.194C0.0771925 291.06 0 290.878 0 290.688C0.00406537 290.5 0.08256 290.32 0.219091 290.187C0.355622 290.053 0.539628 289.977 0.732669 289.973H499.267C499.46 289.977 499.644 290.053 499.781 290.187C499.917 290.32 499.996 290.5 500 290.688C500 290.878 499.923 291.06 499.785 291.194C499.648 291.328 499.462 291.404 499.267 291.404Z" fill="#D1D3D4"/>
                         <path d="M462.968 0.761719H46.6044C41.8806 0.761719 38.0513 4.50163 38.0513 9.11506V251.144C38.0513 255.758 41.8806 259.497 46.6044 259.497H462.968C467.692 259.497 471.522 255.758 471.522 251.144V9.11506C471.522 4.50163 467.692 0.761719 462.968 0.761719Z" fill="white"/>
