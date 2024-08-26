@@ -151,7 +151,7 @@ function NavBar() {
                     <div className="sm:flex sm:gap-4 hidden sm:block">
                         <a
                         className="rounded-md bg-gradient-to-r from-[#FF7A00] to-[#FFD954] px-5 py-2.5 text-sm poppins-medium text-black shadow dark:text-[#fff]"
-                        href="/demo"
+                        href="/contact"
                         >
                         CONTACT US
                         </a>
