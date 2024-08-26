@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import logo from '../assets/Logo-Text-Light-Transparent.png'
+import logo from '/static/assets/Media/Logo-Text-Light-Transparent.png'
 
 
 /* const NavBar = () => {

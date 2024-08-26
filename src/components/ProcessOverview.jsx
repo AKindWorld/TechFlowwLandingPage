@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Processdata from '../assets/Data/Process_Data.json';
 
 function ProcessOverview() {
     const [data, setData] = useState([]);
@@ -9,9 +10,7 @@ function ProcessOverview() {
     };
 
     useEffect(() => {
-        fetch("static/assets/Process_Data.json")
-            .then(response => response.json())
-            .then(data => setData(data));
+        setData(Processdata);
     }, []);
 
     return (
@@ -19,7 +18,7 @@ function ProcessOverview() {
             <div className="mx-6 my-8 px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
                 <div className="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
-                    <img className="dark:invert pointer-events-none" src="/static/assets/SDLC.png" alt="Software Development Life Cycle"></img>
+                    <img className="dark:invert pointer-events-none" src="/static/assets/Media/SDLC.png" alt="Software Development Life Cycle"></img>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-1">

@@ -12,7 +12,7 @@ const Testimonials = () => {
                     We've worked with a lot of amazing clients
                 </h2>
 
-                <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
+                <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8 font-medium">
                     <Testimonials_Template />
                 </div>
             </div>

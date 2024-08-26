@@ -7,7 +7,7 @@
             "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
             "name": "Jane Smith",
             "position": "CTO",
             "testimonial": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
