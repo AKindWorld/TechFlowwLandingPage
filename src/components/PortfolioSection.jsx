@@ -31,7 +31,7 @@ const Portfolio = () => {
 
     return (
         <div id="portfolio">
-            <div className="sm:hidden m-auto mt-4 w-max">
+            <div className="sm:hidden m-auto mt-[20vh] w-max lg:m-4">
                 <label htmlFor="Tab" className="sr-only">Tab</label>
                 <select id="Tab" className="w-full rounded-md border-gray-200 dark:bg-[#181825] outline-none border-none" value={selectedTab} onChange={(e) => setSelectedTab(e.target.value)}>
                     <option className="w-full" value="Profiles">Profiles</option>
