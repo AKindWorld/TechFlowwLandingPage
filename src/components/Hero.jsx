@@ -11,7 +11,7 @@ const Hero = () => {
                 <NavBar />
             </div>
 
-            <div className="flex flex-col-reverse lg:flex-row hero pl-0 md:h-[100vh] items-center justify-center h-auto mt-[10vh] lg:mt-0">
+            <div className="flex flex-col-reverse lg:flex-row hero pl-0 md:h-[100vh] items-center justify-center h-auto mt-0">
                 <div className='flex-auto text-container mx-10 lg:mx-10 md:mx-10 max-w-2xl pb-12 pt-8 md:pt-12 lg:py-32 sm:pb-48'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black dark:text-[#D4C0FF] poppins-bold'>
                         Flow with 

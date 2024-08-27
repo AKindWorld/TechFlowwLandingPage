@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const ContactForm = () => {
     const [submit, setSubmit] = useState(false);
@@ -6,6 +7,7 @@ const ContactForm = () => {
     const [formData, setFormData] = useState({
         "entry.2056271310": "",
         "entry.381005483": "",
+        "entry.648187125": "",
         "entry.942104210": "",
         "entry.2053105548": "",
         "entry.830057170": ""
@@ -27,7 +29,7 @@ const ContactForm = () => {
         
 
         let secreturl = import.meta.env.VITE_REACT_APP_CONTACT_FORM_URL;
-        let url = `https://docs.google.com/forms/d/e/${secreturl}/formResponse?entry.2056271310=${formData["entry.2056271310"]}&entry.381005483=${formData["entry.381005483"]}&entry.942104210=${formData["entry.942104210"]}&entry.2053105548=${formData["entry.2053105548"]}&entry.830057170=${formData["entry.830057170"]}`
+        let url = `https://docs.google.com/forms/d/e/${secreturl}/formResponse?entry.2056271310=${formData["entry.2056271310"]}&entry.381005483=${formData["entry.381005483"]}&entry.648187125=${formData["entry.648187125"]}&entry.942104210=${formData["entry.942104210"]}&entry.2053105548=${formData["entry.2053105548"]}&entry.830057170=${formData["entry.830057170"]}`
 
         const res = await fetch(url, {
             method: 'POST',
@@ -43,23 +45,29 @@ const ContactForm = () => {
             <div className="mx-auto max-w-screen-xl px-4 py-28 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
                     <div className="lg:col-span-2 lg:py-12">
-                        <img src="/static/assets/Media/Logo-Text-Light-Transparent.png" alt="Logo" className="max-w-[15vw]"/>
+                        <img src="/static/assets/Media/Logo-Text-Light-Transparent.png" alt="Logo" className="max-w-[15vw] hidden md:block"/>
                         <p className="max-w-xl text-2xl text-gray-800 dark:text-gray-200 font-bold">
                             TechFloww IT Services
                         </p>
 
                         <div className="mt-8">
-                            <span className='text-lg font-bold text-gray-500 dark:text-gray-300 py-4'> Email: <br></br>
-                                <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> info@techflowwitservices.in </a>
-                            </span>
+                            <Link to="mailto:info@techflowwitservices.in">
+                                <span className='text-lg font-bold text-gray-500 dark:text-gray-300'> Email: <br></br>
+                                    <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> info@techflowwitservices.in </a>
+                                </span>
+                            </Link>
                             <br></br>
-                            <span className='text-lg font-bold text-gray-500 dark:text-gray-300 py-4'> Phone Number: <br></br>
-                                <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> (pending...) </a>
-                            </span>
+                            <Link to="tel:+919903869439">
+                                <span className='text-lg font-bold text-gray-500 dark:text-gray-300'> Phone Number: <br></br>
+                                    <a href="tel:+919903869439" className="hover:underline text-base"> +91 99038 69439 </a>
+                                </span>
+                            </Link>
                             <br></br>
-                            <span className='text-lg font-bold text-gray-500 dark:text-gray-300 py-4'> Office Address: <br></br>
-                                <a href="mailto:info@techflowwitservices.in" className="hover:underline text-base"> (pending...) </a>
-                            </span>
+                            <Link to="">
+                                <span className='text-lg font-bold text-gray-500 dark:text-gray-300'> Office Address: <br></br>
+                                    <a href="" className="hover:underline text-base"> Kolkata, India </a>
+                                </span>
+                            </Link>
                         </div>
                     </div>
 
@@ -73,22 +81,21 @@ const ContactForm = () => {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} target="_self" className="space-y-4">
-                                <fieldset>
-                                    <label className="sr-only" htmlFor="entry.2056271310">Name</label>
-                                    <input
-                                        required
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] focus:outline-none focus:border-[#D4C0FF] focus:ring-1"
-                                        placeholder="Name"
-                                        type="text"
-                                        id="name"
-                                        name="entry.2056271310"
-                                        onChange={handleInputData("entry.2056271310")}
-                                        value={formData["entry.2056271310"]}
-                                        autoComplete={false}
-                                    />
-                                </fieldset>
-
                                 <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div>
+                                        <label className="sr-only" htmlFor="entry.2056271310">Name</label>
+                                        <input
+                                            required
+                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] focus:outline-none focus:border-[#D4C0FF] focus:ring-1"
+                                            placeholder="Name"
+                                            type="text"
+                                            id="name"
+                                            name="entry.2056271310"
+                                            onChange={handleInputData("entry.2056271310")}
+                                            value={formData["entry.2056271310"]}
+                                            autoComplete="off"
+                                        />
+                                    </div>
                                     <div>
                                         <label className="sr-only" htmlFor="entry.381005483">Email</label>
                                         <input
@@ -100,22 +107,42 @@ const ContactForm = () => {
                                             name="email"
                                             value={formData["entry.381005483"]}
                                             onChange={handleInputData("entry.381005483")}
-                                            autoComplete={false}
+                                            autoComplete="off"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                         />
                                     </div>
+                                </fieldset>
 
+                                <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                     <div>
+                                        <label className="sr-only" htmlFor="entry.648187125">Country</label>
+                                        <input
+                                            required
+                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            placeholder="Country"
+                                            type="text"
+                                            id="country"
+                                            name="country"
+                                            value={formData["entry.648187125"]}
+                                            onChange={handleInputData("entry.648187125")}
+                                            autoComplete="off"
+                                        />
+                                    </div>
+                                    <div className='phone-number-group'>
                                         <label className="sr-only" htmlFor="entry.942104210">Phone</label>
                                         <input
-                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] peer"
                                             placeholder="Phone Number"
                                             type="tel"
                                             id="phone"
                                             name="phone"
                                             value={formData["entry.942104210"]}
                                             onChange={handleInputData("entry.942104210")}
-                                            autoComplete={false}
+                                            autoComplete="off"
                                         />
+                                        <p class="items-center mt-2 text-xs text-slate-500 h-0 opacity-0 peer-focus:h-max peer-focus:opacity-100 transition-all duration-300">
+                                            Please include your country code too, like: +01 1234567890
+                                        </p>
                                     </div>
                                 </fieldset>
 
