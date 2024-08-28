@@ -1,9 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const ContactForm = () => {
     const [submit, setSubmit] = useState(false);
+    const [num1, setNum1] = useState(0);
+    const [num2, setNum2] = useState(0);
+    const [userInput, setUserInput] = useState('');
+    const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
+    const [isValidateClicked, setIsValidateClicked] = useState(false);
+    const [validationError, setValidationError] = useState('');
+
+    useEffect(() => {
+        setNum1(Math.floor(Math.random() * 30) + 1);
+        setNum2(Math.floor(Math.random() * 30) + 1);
+      }, []);
     
+    const handleInputChange = (e) => {
+        setUserInput(e.target.value);
+    };
+    
+    const handleValidateClick = (e) => {
+        e.preventDefault();
+        setIsValidateClicked(true);
+        
+        if (parseInt(userInput, 10) === num1 + num2) {
+          setIsSubmitEnabled(true);
+          setValidationError('');
+        } else {
+          setIsSubmitEnabled(false);
+          setValidationError('Incorrect captcha. Please try again.');
+        }
+    };
+
     const [formData, setFormData] = useState({
         "entry.2056271310": "",
         "entry.381005483": "",
@@ -12,6 +40,7 @@ const ContactForm = () => {
         "entry.2053105548": "",
         "entry.830057170": ""
     });
+    const [showOtherField, setShowOtherField] = useState(false);
 
     const handleInputData = (input) => (e) => {
         const { value } = e.target;
@@ -82,11 +111,11 @@ const ContactForm = () => {
                         ) : (
                             <form onSubmit={handleSubmit} target="_self" className="space-y-4">
                                 <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                    <div>
+                                    <div className='flex flex-col-reverse'>
                                         <label className="sr-only" htmlFor="entry.2056271310">Name</label>
                                         <input
                                             required
-                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] focus:outline-none focus:border-[#D4C0FF] focus:ring-1"
+                                            className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
                                             placeholder="Name"
                                             type="text"
                                             id="name"
@@ -95,12 +124,15 @@ const ContactForm = () => {
                                             value={formData["entry.2056271310"]}
                                             autoComplete="off"
                                         />
+                                        <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                            Name
+                                        </p>                                        
                                     </div>
-                                    <div>
+                                    <div className='flex flex-col-reverse'>
                                         <label className="sr-only" htmlFor="entry.381005483">Email</label>
                                         <input
                                             required
-                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
                                             placeholder="Email address"
                                             type="email"
                                             id="email"
@@ -110,15 +142,18 @@ const ContactForm = () => {
                                             autoComplete="off"
                                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                         />
+                                        <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                            Email
+                                        </p>                                        
                                     </div>
                                 </fieldset>
 
                                 <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                    <div>
+                                    <div className='flex flex-col-reverse'>
                                         <label className="sr-only" htmlFor="entry.648187125">Country</label>
                                         <input
                                             required
-                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
                                             placeholder="Country"
                                             type="text"
                                             id="country"
@@ -127,24 +162,30 @@ const ContactForm = () => {
                                             onChange={handleInputData("entry.648187125")}
                                             autoComplete="off"
                                         />
-                                    </div>
-                                    <div className='phone-number-group'>
-                                        <label className="sr-only" htmlFor="entry.942104210">Phone</label>
-                                        <input
-                                            className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] peer"
-                                            placeholder="Phone Number"
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            value={formData["entry.942104210"]}
-                                            onChange={handleInputData("entry.942104210")}
-                                            autoComplete="off"
-                                        />
-                                        <p class="items-center mt-2 text-xs text-slate-500 h-0 opacity-0 peer-focus:h-max peer-focus:opacity-100 transition-all duration-300">
-                                            Please include your country code too, like: +01 1234567890
+                                        <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                            Country
                                         </p>
                                     </div>
+                                    <div className='phone-number-group flex flex-col-reverse'>
+                                        <label className="sr-only" htmlFor="entry.942104210">Phone</label>
+                                            <input
+                                                required
+                                                className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] peer"
+                                                placeholder="Phone Number"
+                                                type="tel"
+                                                id="phone"
+                                                name="phone"
+                                                value={formData["entry.942104210"]}
+                                                onChange={handleInputData("entry.942104210")}
+                                                autoComplete="off"
+                                            />
+                                            <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                                Country code + Phone Number
+                                            </p>
+                                    </div>
                                 </fieldset>
+
+                                <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
 
                                 <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">What are you enquiring about?</div>
 
@@ -228,21 +269,21 @@ const ContactForm = () => {
                                                 checked={formData["entry.2053105548"] === 'Other'}
                                                 onChange={handleInputData("entry.2053105548")}
                                             />
-
                                             <span className="text-sm"> Other </span>
                                         </label>
                                     </div>
-
                                 </fieldset>
+
+                                <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
                                 
                                 <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">Briefly enter some details about the reason for contacting us:</div>
 
-                                <fieldset>
+                                <fieldset className='flex flex-col-reverse'>
                                     <label className="sr-only" htmlFor="entry.830057170">Details</label>
 
                                     <textarea
                                         required
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                        className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
                                         placeholder="Details"
                                         rows="8"
                                         id="message"
@@ -251,15 +292,41 @@ const ContactForm = () => {
                                         onChange={handleInputData("entry.830057170")}
                                         autoComplete={false}
                                     ></textarea>
+                                    <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                        Details
+                                    </p>
                                 </fieldset>
 
-                                <div className="mt-4">
+                                <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+
+                                <fieldset>
+                                    <div className="captcha-field text-sm w-full">
+                                        <label className="text-sm">Captcha: </label>
+                                        <label>{`${num1} + ${num2} = `}</label>
+                                        <input placeholder={`Between ${num1 + num2 - Math.floor(Math.random() * 3)} - ${num1 + num2 + 2} `} type="number" value={userInput} onChange={handleInputChange} className="peer w-max rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]" />
+                                        <button type="button" onClick={handleValidateClick} className="mx-2 p-3 px-4 bg-slate-300 dark:bg-[#D4C0FF] dark:text-black">Validate</button>
+                                        {validationError && (
+                                            <p className="mt-2 text-xs text-red-500">
+                                            {validationError}
+                                            </p>
+                                        )}
+                                        <p class="items-center mt-2 text-xs text-slate-500 h-0 opacity-0 peer-focus:h-max peer-focus:opacity-100 transition-all duration-300">
+                                            This is a necessary step to prevent spam. Please bear with us.
+                                        </p>
+                                    </div>
+                                </fieldset>
+
+                                <div className="mt-4 sm:flex">
                                     <button
-                                        type="submit"
-                                        className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                                    type="submit"
+                                    disabled={!isSubmitEnabled || !isValidateClicked}
+                                    className="peer inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         Submit
                                     </button>
+                                    <p class="items-center mt-2 text-xs text-slate-500 h-0 opacity-0 peer-disabled:h-max peer-disabled:opacity-100 transition-all duration-300 sm:w-56 sm:ml-4">
+                                        Fill up the captcha above and click the validate button to enable Submit.
+                                    </p>
                                 </div>
                             </form>
                         )}
