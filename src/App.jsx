@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom'
 
 import Home from './Pages/Home'
-import ProductDemo from './Pages/ProductDemo'
 import Portfolio from './Pages/Portfolio'
 import Contact from './Pages/Contact'
 
@@ -28,7 +27,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/demo" element={<ProductDemo />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

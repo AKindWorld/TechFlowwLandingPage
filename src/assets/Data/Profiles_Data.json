@@ -7,13 +7,13 @@
             "skills": ["Leadership", "Strategy"],
             "experienceyears": 10,
             "link1": "https://example.com/link1",
-            "link1iconsrc": "https://static.vecteezy.com/system/resources/previews/020/009/614/large_2x/email-and-mail-icon-black-free-png.png",
+            "link1iconsrc": "mail",
             "link2": "https://example.com/link2",
-            "link2iconsrc": "link2icon.jpg",
+            "link2iconsrc": "facebook",
             "link3": "https://example.com/link3",
-            "link3iconsrc": "link3icon.jpg",
+            "link3iconsrc": "linkedin",
             "link4": "https://example.com/link4",
-            "link4iconsrc": "link4icon.jpg",
+            "link4iconsrc": "github",
             "color": "blue"
         },
         {

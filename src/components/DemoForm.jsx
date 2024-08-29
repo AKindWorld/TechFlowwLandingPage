@@ -1,205 +1,189 @@
 import React, { useState } from 'react';
+import data from '../assets/Data/Profiles_Data.json';
+import facebookIcon from '/static/assets/Icons/Facebook.svg';
+import twitterIcon from '/static/assets/Icons/Twitter.svg';
+import linkedinIcon from '/static/assets/Icons/LinkedIn.svg';
+import instagramIcon from '/static/assets/Icons/Instagram.svg';
+import githubIcon from '/static/assets/Icons/GitHub.svg';
+import mailIcon from '/static/assets/Icons/Email.svg';
+import phoneIcon from '/static/assets/Icons/Phone.svg';
+import linkIcon from '/static/assets/Icons/DefaultLink.svg';
 
-const DemoForm = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [option, setOption] = useState('');
-    const [message, setMessage] = useState('');
+/* NOTE: I use this as a playground to test things as needed, the original page has now been removed. */
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+const iconMap = {
+    facebook: facebookIcon,
+    twitter: twitterIcon,
+    linkedin: linkedinIcon,
+    instagram: instagramIcon,
+    github: githubIcon,
+    mail: mailIcon,
+    phone: phoneIcon,
+    default: linkIcon,
+};
 
-        // Send email using emailjs library
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-            .then((result) => {
-                console.log(result.text);
-                // Reset form fields
-                setName('');
-                setEmail('');
-                setPhone('');
-                setOption('');
-                setMessage('');
-            }, (error) => {
-                console.log(error.text);
-            });
-    };
-
-    
+const LinkWithIcon = ({ link, iconSrc }) => {
+    const iconSrcUrl = iconMap[iconSrc] || null;
+  
     return (
-        <section className="h-screen">
-            <div className="mx-auto max-w-screen-xl px-4 py-28 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-                    <div className="lg:col-span-2 lg:py-12">
-                        <p className="max-w-xl text-lg">
-                            TechFloww IT Services
-                            <br></br>
-                            email
-                        </p>
+      <div className="link-with-icon">
+        <a href={link} target="_blank" rel="noopener noreferrer" className='block pl-2 pr-2 mt-0 mb-0 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600'>
+          <img src={iconSrcUrl} alt={iconSrc} className="icon-class size-6 rounded-full object-cover aspect-square" />
+        </a>
+      </div>
+    );
+};
 
-                        <div className="mt-8">
-                            <a href="#" className="text-2xl font-bold text-[#E29016]"> phone number </a>
-
-                            <address className="mt-2 not-italic">office address</address>
-                        </div>
-                    </div>
-
-                    <div className="rounded-lg bg-white dark:bg-[#181825] p-8 shadow-lg lg:col-span-3 lg:p-12">
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                                <label className="sr-only" htmlFor="name">Name</label>
-                                <input
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825] focus:outline-none focus:border-[#D4C0FF] focus:ring-1"
-                                    placeholder="Name"
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+const DemoForm = ({}) => {
+    return (
+        <div>
+            <h3 className="text-center text-sm poppins-semibold text-teal-500 sm:text-lg pb-4 mt-8">
+                    Board Members
+            </h3>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 m-4 md:p-4'>
+                {data.boardmembers.map((boardmembers, index) => (
+                    <div className="mb-8 sm:break-inside-avoid m-6" key={index}>
+                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
+                            <div className="flex items-center gap-4">
+                                <img
+                                    alt=""
+                                    src={boardmembers.avatar}
+                                    className="size-14 rounded-full object-cover"
                                 />
-                            </div>
-
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
-                                    <label className="sr-only" htmlFor="email">Email</label>
-                                    <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                        placeholder="Email address"
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="sr-only" htmlFor="phone">Phone</label>
-                                    <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                        placeholder="Phone Number"
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
-                                    />
+                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{boardmembers.name}</p>
+                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{boardmembers.position}</p>
                                 </div>
                             </div>
-
-                            <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
-                                <div>
-                                    <label
-                                        htmlFor="Option1"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option1"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 1"
-                                            checked={option === 'Option 1'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 1 </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option2"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option2"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 2"
-                                            checked={option === 'Option 2'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 2 </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option3"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option3"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 3"
-                                            checked={option === 'Option 3'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 3 </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option4"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option4"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                            value="Option 4"
-                                            checked={option === 'Option 4'}
-                                            onChange={(e) => setOption(e.target.value)}
-                                        />
-
-                                        <span className="text-sm"> Option 4 </span>
-                                    </label>
-                                </div>
+                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
+                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
+                                <span className='font-bold'>Skills:</span>
+                                <p>{boardmembers.skills[0]}</p>
+                                <p>{boardmembers.skills[1]}</p>
+                                <p>{boardmembers.skills[2]}</p>
+                            </p>
+                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
+                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                                <LinkWithIcon link={boardmembers.link1} iconSrc={boardmembers.link1iconsrc} />
+                                <LinkWithIcon link={boardmembers.link2} iconSrc={boardmembers.link2iconsrc} />
+                                <LinkWithIcon link={boardmembers.link3} iconSrc={boardmembers.link3iconsrc} />
+                                <LinkWithIcon link={boardmembers.link4} iconSrc={boardmembers.link4iconsrc} />
                             </div>
-
-                            <div>
-                                <label className="sr-only" htmlFor="message">Message</label>
-
-                                <textarea
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                    placeholder="Message"
-                                    rows="8"
-                                    id="message"
-                                    name="message"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                ></textarea>
-                            </div>
-
-                            <div className="mt-4">
-                                <button
-                                    type="submit"
-                                    className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                                >
-                                    Send Enquiry
-                                </button>
-                            </div>
-                        </form>
+                        </blockquote>
                     </div>
-                </div>
+                ))}
             </div>
-        </section>
+            <h3 className="text-center text-sm poppins-semibold text-teal-500 sm:text-lg pb-4 mt-16">
+                    Technical Experts
+            </h3>
+            <div className='mt-2 sm:columns-2 sm:gap-6 lg:columns-2 lg:gap-8 p-10 m-16'>
+                {data.technicalexperts.map((technicalexperts, index) => (
+                    <div className="mb-8 sm:break-inside-avoid" key={index}>
+                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
+                            <div className="flex items-center gap-4">
+                                <img
+                                    alt=""
+                                    src={technicalexperts.image}
+                                    className="size-14 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                />
+                                <div>
+                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{technicalexperts.name}</p>
+                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{technicalexperts.position}</p>
+                                </div>
+                            </div>
+                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
+                                {technicalexperts.skills[1]}
+                            </p>
+                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                                <a rel="noopener noreferrer" href={technicalexperts.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link1iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalexperts.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link2iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalexperts.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalexperts.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalexperts.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                            </div>
+                        </blockquote>
+                    </div>
+                ))}
+            </div>
+            <h3 className="text-center text-sm poppins-semibold text-teal-500 sm:text-lg pb-4 mt-16">
+                    Technical Team Members
+            </h3>
+            <div className='mt-2 sm:columns-2 sm:gap-6 lg:columns-2 lg:gap-8 p-10 m-16'>
+                {data.technicalteammembers.map((technicalteammembers, index) => (
+                    <div className="mb-8 sm:break-inside-avoid" key={index}>
+                        <blockquote className="rounded-2xl bg-[#f9fafb] dark:bg-[#181825] border border-[#f9fafb] dark:border-[#181825] hover:border-teal-500/10 p-6 shadow-sm sm:p-8">
+                            <div className="flex items-center gap-4">
+                                <img
+                                    alt=""
+                                    src={technicalteammembers.image}
+                                    className="size-14 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                />
+                                <div>
+                                    <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{technicalteammembers.name}</p>
+                                    <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{technicalteammembers.position}</p>
+                                </div>
+                            </div>
+                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
+                                {technicalteammembers.skills[1]}
+                            </p>
+                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                                <a rel="noopener noreferrer" href={technicalteammembers.link1} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link1iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalteammembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link2iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalteammembers.link2} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                                <a rel="noopener noreferrer" href={technicalteammembers.link3} aria-label="Link1" className="p-2 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600">
+                                    <img
+                                        alt=""
+                                        src={technicalteammembers.link4iconsrc}
+                                        className="size-4 rounded-full object-cover bg-gray-500 dark:bg-gray-500 aspect-square"
+                                    />
+                                </a>
+                            </div>
+                        </blockquote>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 };
 
