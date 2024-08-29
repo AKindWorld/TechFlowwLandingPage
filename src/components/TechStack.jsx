@@ -19,7 +19,7 @@ const TechStack = () => {
                     <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-gray-300 group-hover:text-[#417e38]/80 group-hover:text-2xl group-hover:font-medium transition-all sm:text-xl">NodeJS</h3>
                 </a>
                 <a className="group block text-center hover:fill-[#242938] pt-4 pb-4 md:p-0" target='_blank' rel="noopener noreferrer">
-                    <img className="m-auto invert group-hover:invert-0" src="/static/assets/Icons/ExpressJSIcon.svg" alt="ExpressJS Logo"/>
+                    <img className="m-auto invert group-hover:invert-0 grayscale-[50%]" src="/static/assets/Icons/ExpressJSIcon.svg" alt="ExpressJS Logo"/>
                     <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-gray-300 group-hover:text-[#242938]/80 dark:group-hover:text-gray-200 group-hover:text-2xl group-hover:font-medium transition-all sm:text-xl">ExpressJS</h3>
                 </a>
                 <a className="group block text-center hover:fill-[#000] pt-4 pb-4 md:p-0" target='_blank' rel="noopener noreferrer">

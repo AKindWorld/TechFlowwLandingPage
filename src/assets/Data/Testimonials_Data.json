@@ -1,52 +1,76 @@
 {
     "testimonials": [
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
-            "name": "John Doe",
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Anita Gupta",
             "position": "CEO",
-            "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "company": "ABC Company",
+            "location": "Mumbai",
+            "rating": 5,
+            "testimonial": "TechflowWIT Services truly understood our vision and brought it to life with an intuitive and user-friendly app. Their team's attention to detail is unmatched!"
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
-            "name": "Jane Smith",
+            "name": "Rajiv Sharma",
             "position": "CTO",
-            "testimonial": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
+            "company": "XYZ Company",
+            "location": "Kolkata",
+            "rating": 4.5,
+            "testimonial": "TechflowWIT Services delivered a clean and professional website that has significantly boosted our online presence. We had a few rounds of revisions, but they handled them efficiently. The final product was worth the wait."
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1g",
-            "name": "David Johnson",
-            "position": "Developer",
-            "testimonial": "At vero eos et accusamus et iusto odio dignissimos ducimus."
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Sarah Thompson",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "New York, USA",
+            "rating": 4.5,
+            "testimonial": "I was impressed with how quickly TechflowWIT Services completed our app. We requested a few changes after the initial delivery, and they were responsive in making those adjustments. The app works great for our needs."
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
-            "name": "Emily Williams",
-            "position": "Designer",
-            "testimonial": "Eaque ipsa quae ab illo inventore veritatis et quasi architecto."
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Vikram Patel",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "Ahmedabad",
+            "rating": 4.5,
+            "testimonial": "We approached TechflowWIT Services to revamp our outdated website, and they transformed it into a modern, sleek, and highly interactive platform. Our customers love it!"
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
-            "name": "Michael Brown",
-            "position": "Manager",
-            "testimonial": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. And I am repeating this data again so my testimonial looks nice and good, hah. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. And again. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. One last time? Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Ajay Desai",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "Hyderabad",
+            "rating": 4.5,
+            "testimonial": "TechflowWIT Services took the time to understand our specific needs and delivered a customized app that has significantly boosted our business. Their team is professional and reliable."
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
-            "name": "Sarah Davis",
-            "position": "Marketing",
-            "testimonial": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Emily Watson",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "Sydney, Australia",
+            "rating": 4.5,
+            "testimonial": "They did a nice job."
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
-            "name": "Robert Wilson",
-            "position": "Sales",
-            "testimonial": "Consectetur, adipisci velit, sed quia non numquam eius modi tempora."
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Simran Kaur",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "Jaipur",
+            "rating": 4.5,
+            "testimonial": "The e-commerce website developed by TechflowWIT Services is both attractive and easy to navigate. They were patient with our feedback and made sure we were satisfied with the final design. It’s been a great addition to our business."
         },
         {
-            "avatar": "https://cms.qz.com/wp-content/uploads/2018/12/teeth3.png?quality=75&strip=all&w=450&h=454&crop=1",
-            "name": "Olivia Taylor",
-            "position": "Support",
-            "testimonial": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Kavita Gupta",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "Noida",
+            "rating": 4.5,
+            "testimonial": "TechflowWIT Services delivered our website on time and within budget. They were responsive to our feedback, and the final product is exactly what we envisioned. It’s been a positive experience working with them."
         }
     ]
 }

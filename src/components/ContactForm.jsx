@@ -9,6 +9,7 @@ const ContactForm = () => {
     const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
     const [isValidateClicked, setIsValidateClicked] = useState(false);
     const [validationError, setValidationError] = useState('');
+    const [validationSuccess, setValidationSuccess] = useState('');
 
     useEffect(() => {
         setNum1(Math.floor(Math.random() * 30) + 1);
@@ -25,9 +26,11 @@ const ContactForm = () => {
         
         if (parseInt(userInput, 10) === num1 + num2) {
           setIsSubmitEnabled(true);
+          setValidationSuccess('Success! You may now submit the form.');
           setValidationError('');
         } else {
           setIsSubmitEnabled(false);
+          setValidationSuccess('');
           setValidationError('Incorrect captcha. Please try again.');
         }
     };
@@ -308,6 +311,11 @@ const ContactForm = () => {
                                         {validationError && (
                                             <p className="mt-2 text-xs text-red-500">
                                             {validationError}
+                                            </p>
+                                        )}
+                                        {validationSuccess && (
+                                            <p className="mt-2 text-xs text-green-500">
+                                            {validationSuccess}
                                             </p>
                                         )}
                                         <p class="items-center mt-2 text-xs text-slate-500 h-0 opacity-0 peer-focus:h-max peer-focus:opacity-100 transition-all duration-300">
