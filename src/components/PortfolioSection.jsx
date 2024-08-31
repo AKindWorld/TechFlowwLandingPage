@@ -26,12 +26,12 @@ const Portfolio = () => {
     };
 
     const getTabClassName = (tabName) => {
-        return `shrink-0 rounded-lg p-4 text-sm font-medium text-gray-500 dark:text-gray-200 hover:bg-teal-200 hover:text-gray-700 ${selectedTab === tabName ? 'bg-teal-300 dark:text-gray-800' : ''}`;
+        return `shrink-0 rounded-lg p-2 sm:p-4 text-sm font-medium text-gray-500 dark:text-gray-200 hover:bg-teal-200 hover:text-gray-700 ${selectedTab === tabName ? 'bg-teal-300 dark:text-gray-800' : ''}`;
     };
 
     return (
         <div id="portfolio">
-            <div className="sm:hidden m-auto mt-[20vh] w-max lg:m-4">
+            <div className="hidden m-auto mt-[20vh] w-max lg:m-4">
                 <label htmlFor="Tab" className="sr-only">Tab</label>
                 <select id="Tab" className="w-full rounded-md border-gray-200 dark:bg-[#181825] outline-none border-none" value={selectedTab} onChange={(e) => setSelectedTab(e.target.value)}>
                     <option className="w-full" value="Profiles">Profiles</option>
@@ -40,8 +40,8 @@ const Portfolio = () => {
                 </select>
             </div>
 
-            <div className="hidden sm:block">
-                <nav className="flex gap-6 justify-center pt-28" aria-label="Tabs">
+            <div className="block">
+                <nav className="flex flex-wrap md:flex-nowrap gap-2 md:gap-6 justify-center pt-28" aria-label="Tabs">
                     <a
                         href="#portfolio"
                         className={getTabClassName('Profiles')}

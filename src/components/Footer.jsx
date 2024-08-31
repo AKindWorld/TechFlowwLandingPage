@@ -1,14 +1,17 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import logo from '/static/assets/Media/Logo-Text-Light-Transparent.png'
 
 const Footer = () => {
+    const { pathname } = useLocation();
+    
     return (
         <footer className="">
             <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 mb-56 md:mb-0">
                 <div className="block lg:items-start lg:gap-8">
 
                 <div className="mt-8 grid grid-cols-4 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-                    <div className="col-span-4 md:col-span-3 px-3">
+                    <div className={`col-span-4 md:col-span-3 px-3 ${pathname === '/contact' ? 'hidden' : ''}`}>
                         <div>
                             <h2 className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-bold text-gray-900 dark:text-[#fff]">Ready to scale your business?</h2>
 
@@ -18,7 +21,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="col-span-4 md:col-span-1 lg:col-span-2 lg:flex justify-end items-center justify-self-center content-center">
+                    <div className={`col-span-4 md:col-span-1 lg:col-span-2 justify-end items-center justify-self-center content-center ${pathname === '/contact' ? 'hidden' : 'lg:flex'}`}>
                         <button
                             className="mt-1 w-[90vw] bg-gradient-to-r from-[#3F0] to-[#16D5E1] px-6 py-3 text-xs md:text-sm font-bold uppercase tracking-wide text-white transition-none sm:mt-0 sm:w-auto sm:shrink-0 justify-end"
                         >

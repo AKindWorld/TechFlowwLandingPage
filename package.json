@@ -26,7 +26,8 @@
     "react-router-dom": "^6.26.0",
     "react-router-hash-link": "^2.4.3",
     "react-select": "^5.8.0",
-    "rollup-plugin-node-polyfills": "^0.2.1"
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "tailwindcss-animated": "^1.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

@@ -27,9 +27,9 @@ const LinkWithIcon = ({ link, iconSrc }) => {
     const iconSrcUrl = iconMap[iconSrc] || null;
   
     return (
-      <div className="link-with-icon">
+      <div className="link-with-icon hover:animate-jump hover:animate-once">
         <a href={link} target="_blank" rel="noopener noreferrer" className='block pl-2 pr-2 mt-0 mb-0 rounded-md dark:text-gray-100 text-gray-800 hover:text-violet-400 hover:dark:text-violet-600'>
-          <img src={iconSrcUrl} alt={iconSrc} className="icon-class size-6 rounded-full object-cover aspect-square opacity-75 hover:opacity-100" />
+          <img src={iconSrcUrl} alt={iconSrc} className="icon-class size-6 rounded-full object-cover aspect-square opacity-75 hover:opacity-100 dark:invert" />
         </a>
       </div>
     );
@@ -97,8 +97,13 @@ const PortfolioProfiles = () => {
                                     <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{member.position}</p>
                                 </div>
                             </div>
-                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
-                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-normal">
+                            <hr class="h-px my-6 bg-gray-200 border-2 dark:bg-gray-800 dark:opacity-40 group-hover:opacity-80 group-hover:animate-fade-right animate-once animate-duration-150 animate-ease-in"></hr>
+                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-normal group-hover:animate-fade-up animate-once animate-delay-150 animate-duration-150 animate-ease-in">
+                                <p>
+                                    <span className='font-bold'>Experience: </span> 
+                                    {member.experienceyears} years
+                                </p>
+                                <br></br>
                                 <span className='font-bold'>Skills:</span>
                                 <ul className='list-disc ml-4 mt-1'>
                                     <li>{member.skills[0]}</li>
@@ -106,8 +111,8 @@ const PortfolioProfiles = () => {
                                     <li>{member.skills[2]}</li>
                                 </ul>
                             </p>
-                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
-                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700 dark:opacity-40 group-hover:opacity-80 group-hover:animate-fade-left animate-once animate-delay-150 animate-duration-300 animate-ease-in"></hr>
+                            <div className="flex justify-center space-x-4 align-center">
                                 <LinkWithIcon link={member.link1} iconSrc={member.link1iconsrc} />
                                 <LinkWithIcon link={member.link2} iconSrc={member.link2iconsrc} />
                                 <LinkWithIcon link={member.link3} iconSrc={member.link3iconsrc} />
@@ -136,8 +141,13 @@ const PortfolioProfiles = () => {
                                     <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{member.position}</p>
                                 </div>
                             </div>
-                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
-                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-normal">
+                            <hr class="h-px my-6 bg-gray-200 border-2 dark:bg-gray-800 dark:opacity-40 group-hover:opacity-80 group-hover:animate-fade-right animate-once animate-duration-150 animate-ease-in"></hr>
+                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-normal group-hover:animate-fade-up animate-once animate-delay-150 animate-duration-150 animate-ease-in">
+                                <p>
+                                    <span className='font-bold'>Experience: </span> 
+                                    {member.experienceyears} years
+                                </p>
+                                <br></br>
                                 <span className='font-bold'>Skills:</span>
                                 <ul className='list-disc ml-4 mt-1'>
                                     <li>{member.skills[0]}</li>
@@ -145,8 +155,8 @@ const PortfolioProfiles = () => {
                                     <li>{member.skills[2]}</li>
                                 </ul>
                             </p>
-                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
-                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700 dark:opacity-40 group-hover:opacity-80 group-hover:animate-fade-left animate-once animate-delay-150 animate-duration-300 animate-ease-in"></hr>
+                            <div className="flex justify-center space-x-4 align-center">
                                 <LinkWithIcon link={member.link1} iconSrc={member.link1iconsrc} />
                                 <LinkWithIcon link={member.link2} iconSrc={member.link2iconsrc} />
                                 <LinkWithIcon link={member.link3} iconSrc={member.link3iconsrc} />
@@ -175,8 +185,13 @@ const PortfolioProfiles = () => {
                                     <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{member.position}</p>
                                 </div>
                             </div>
-                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
-                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-normal">
+                            <hr class="h-px my-6 bg-gray-200 border-2 dark:bg-gray-800 dark:opacity-40 group-hover:opacity-80 group-hover:animate-fade-right animate-once animate-duration-150 animate-ease-in"></hr>
+                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-normal group-hover:animate-fade-up animate-once animate-delay-150 animate-duration-150 animate-ease-in">
+                                <p>
+                                    <span className='font-bold'>Experience: </span> 
+                                    {member.experienceyears} years
+                                </p>
+                                <br></br>
                                 <span className='font-bold'>Skills:</span>
                                 <ul className='list-disc ml-4 mt-1'>
                                     <li>{member.skills[0]}</li>
@@ -184,8 +199,8 @@ const PortfolioProfiles = () => {
                                     <li>{member.skills[2]}</li>
                                 </ul>
                             </p>
-                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700"></hr>
-                            <div className="flex justify-center pt-2 space-x-4 align-center">
+                            <hr class="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700 dark:opacity-40 group-hover:opacity-80 group-hover:animate-fade-left animate-once animate-delay-150 animate-duration-300 animate-ease-in"></hr>
+                            <div className="flex justify-center space-x-4 align-center">
                                 <LinkWithIcon link={member.link1} iconSrc={member.link1iconsrc} />
                                 <LinkWithIcon link={member.link2} iconSrc={member.link2iconsrc} />
                                 <LinkWithIcon link={member.link3} iconSrc={member.link3iconsrc} />
