@@ -18,7 +18,7 @@ const Testimonials_Template = () => {
                                     {/* SVGs for stars */}
                                 </div>
                                 <p className="mt-0.5 text-base poppins-semibold text-gray-900 dark:text-gray-200">{testimonial.name}</p>
-                                <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{testimonial.position}</p>
+                                <p className="mt-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">{testimonial.location}</p>
                             </div>
                         </div>
                         <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">

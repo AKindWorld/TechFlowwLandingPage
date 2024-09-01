@@ -7,10 +7,10 @@ const ServicesTemplate = () => {
             {data.services.map((service, index) => (
                 <a
                     key={index}
-                    className="block rounded-xl border border-[#fff] dark:border-[#181825] p-8 shadow-lg transition hover:border-teal-500/10 hover:shadow-teal-500/10 bg-[#fff] dark:bg-[#181825]"
+                    className="group block rounded-xl border border-[#fff] dark:border-[#181825] p-8 shadow-lg transition hover:border-[#D4C0FF]/50 hover:border-1 hover:shadow-teal-500/10 bg-[#fff] dark:bg-[#181825]"
                     href="#"
                 >
-                    <img src={service.icon} className='mb-4' alt="Service Icon" />
+                    <img src={service.icon} className='mb-4 group-hover:animate-shake group-hover:animate-duration-300 group-hover:animate-ease-in' alt="Service Icon" />
                     <h2 className="mt-4 text-xl font-bold text-gray-800 dark:text-white">
                         {service.service_name}
                     </h2>
