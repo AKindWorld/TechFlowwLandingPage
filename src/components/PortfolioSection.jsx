@@ -41,7 +41,7 @@ const Portfolio = () => {
             </div>
 
             <div className="block">
-                <nav className="flex flex-wrap md:flex-nowrap gap-2 md:gap-6 justify-center pt-28" aria-label="Tabs">
+                <nav className="flex flex-wrap md:flex-nowrap gap-2 md:gap-6 justify-center pt-12 lg:pt-28" aria-label="Tabs">
                     <a
                         href="#portfolio"
                         className={getTabClassName('Profiles')}
