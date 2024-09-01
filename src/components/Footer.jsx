@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '/static/assets/Media/Logo-Text-Light-Transparent.png'
 
 const Footer = () => {
@@ -16,12 +16,13 @@ const Footer = () => {
                             <h2 className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-bold text-gray-900 dark:text-[#fff]">Ready to scale your business?</h2>
 
                             <p className="mt-4 text-gray-500 poppins-light dark:text-gray-300 text-xs md:text-xl lg:text-xl xl:text-xl">
-                            Get in touch and we'll build something amazing <span className='lavishly-yours-regular text-sm md:text-3xl lg:text-3xl xl:text-3xl'> together</span>.
+                                Get in touch and we'll build something amazing <span className='lavishly-yours-regular text-sm md:text-3xl lg:text-3xl xl:text-3xl'> together</span>.
                             </p>
                         </div>
                     </div>
 
                     <div className={`col-span-4 md:col-span-1 lg:col-span-2 justify-end items-center justify-self-center content-center ${pathname === '/contact' ? 'hidden' : 'lg:flex'}`}>
+                        <Link to="/contact">
                         <button className='hidden lg:flex group items-center bg-gradient-to-r bg-[#181825] hover:bg-[#D4C0FF] hover:text-black transition-all border-2 border-[#FFF]/10 dark:border-[#FFF]/10 hover:border-[#D4C0FF] hover:border-2 dark:hover:border-[#D4C0FF] text-gray-200 font-bold py-4 px-6 rounded-lg text-sm sm:text-base md:text-lg focus:outline-none focus:outline-2 focus:outline-[#D4C0FF]'>
                             <div className='group-hover:animate-fade-right group-hover:animate-ease-out group-hover:animate-normal animate-fade-left animate-ease-out'>
                                 <svg className="group-hover:block hidden bg-white rounded-md size-8 p-2 button-arrow mr-4" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,10 +35,13 @@ const Footer = () => {
                                     <path className='' fill-rule="evenodd" clip-rule="evenodd" d="M12.293 5.29279C12.4805 5.10532 12.7348 5 13 5C13.2652 5 13.5195 5.10532 13.707 5.29279L17.707 9.29279C17.8945 9.48031 17.9998 9.73462 17.9998 9.99979C17.9998 10.265 17.8945 10.5193 17.707 10.7068L13.707 14.7068C13.5184 14.8889 13.2658 14.9897 13.0036 14.9875C12.7414 14.9852 12.4906 14.88 12.3052 14.6946C12.1198 14.5092 12.0146 14.2584 12.0123 13.9962C12.01 13.734 12.1108 13.4814 12.293 13.2928L14.586 10.9998H3C2.73478 10.9998 2.48043 10.8944 2.29289 10.7069C2.10536 10.5194 2 10.265 2 9.99979C2 9.73457 2.10536 9.48022 2.29289 9.29268C2.48043 9.10514 2.73478 8.99979 3 8.99979H14.586L12.293 6.70679C12.1055 6.51926 12.0002 6.26495 12.0002 5.99979C12.0002 5.73462 12.1055 5.48031 12.293 5.29279Z" fill="#000"/>
                                 </svg>
                             </div>
-                        </button>    
-                        <button className="group lg:hidden mt-1 w-[90vw] bg-[#181825] hover:bg-[#D4C0FF] px-6 py-3 text-xs md:text-sm font-bold uppercase tracking-wide text-white hover:text-[#181825] border-none transition-all sm:mt-0 sm:w-auto sm:shrink-0 justify-end">
-                            <a className="hover:text-[#181825] group-hover:animate-fade-right" href='/contact'>Contact Us</a>
-                        </button>
+                        </button> 
+                        </Link>
+                        <Link to="/contact">
+                            <button className="group lg:hidden mt-1 w-[90vw] bg-[#181825] hover:bg-[#D4C0FF] px-6 py-3 text-xs md:text-sm font-bold uppercase tracking-wide text-white hover:text-[#181825] border-none transition-all sm:mt-0 sm:w-auto sm:shrink-0 justify-end">
+                                <a className="hover:text-[#181825] group-hover:animate-fade-right" href='/contact'>Contact Us</a>
+                            </button>
+                        </Link>
                     </div>
 
                     <div className="col-span-4 lg:col-span-1 sm:col-span-4 sm:h-32 justify-self-center content-center">
