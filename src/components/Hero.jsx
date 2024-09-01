@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar'
 import '../../src/index.css';
 
+
+export function useIsVisible(ref) {
+    const [isIntersecting, setIntersecting] = useState(false);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(([entry]) => {
+          setIntersecting(entry.isIntersecting)
+      } 
+      );
+      
+      observer.observe(ref.current);
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref]);
+  
+    return isIntersecting;
+}
+
+
 const Hero = () => {
+    const ref5 = useRef();
+    const isVisible5 = useIsVisible(ref5);
+
     return (
         <>
         <div className='hero' id='hero'>
@@ -11,7 +34,7 @@ const Hero = () => {
                 <NavBar />
             </div>
 
-            <div className="flex flex-col-reverse lg:flex-row hero pl-0 md:h-[100vh] items-center justify-center h-auto mt-0">
+            <div ref={ref5} className={`flex flex-col-reverse lg:flex-row hero pl-0 md:h-[100vh] items-center justify-center h-auto mt-0 ${isVisible5 ? "opacity-100" : "opacity-0"} transition-opacity duration-700 ease-in`}>
                 <div className='flex-auto text-container mx-10 lg:mx-10 md:mx-10 max-w-2xl pb-12 pt-8 md:pt-12 lg:py-32 sm:pb-48'>
                     <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black dark:text-[#D4C0FF] poppins-bold'>
                         Flow with 
@@ -19,20 +42,31 @@ const Hero = () => {
                         Lead with TechFloww
                     </h1>
                     <span>
-                        <p className='mt-6 text-base md:text-md lg:text-lg font-medium leading-6 md:leading-8 poppins-regular max-w-xl'>
+                        <p className='mt-6 text-base md:text-md lg:text-lg font-medium leading-6 md:leading-8 poppins-regular max-w-xl lg:mb-8 lg:mt-8'>
                             We are a team of highly motivated and skilled developers dedicated to delivering only the best software.
                         </p>
                     </span>
                     <div className='flex items-center flex-col sm:flex-row'>
                         <a href='/contact'>
-                            <button className='flex items-center bg-gradient-to-r from-[#3F0] to-[#16D5E1] hover:bg-black transition-all border-2 border-[#FFF]/10 dark:border-[#FFF]/10 hover:border-[#000] hover:border-2 dark:hover:border-[#FFF] text-black dark:text-gray-200 mt-6 font-bold py-4 px-4 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg'>
-                                CONTACT US
-                                <svg className="button-arrow ml-2 mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path className='dark:fill-white' fill-rule="evenodd" clip-rule="evenodd" d="M12.293 5.29279C12.4805 5.10532 12.7348 5 13 5C13.2652 5 13.5195 5.10532 13.707 5.29279L17.707 9.29279C17.8945 9.48031 17.9998 9.73462 17.9998 9.99979C17.9998 10.265 17.8945 10.5193 17.707 10.7068L13.707 14.7068C13.5184 14.8889 13.2658 14.9897 13.0036 14.9875C12.7414 14.9852 12.4906 14.88 12.3052 14.6946C12.1198 14.5092 12.0146 14.2584 12.0123 13.9962C12.01 13.734 12.1108 13.4814 12.293 13.2928L14.586 10.9998H3C2.73478 10.9998 2.48043 10.8944 2.29289 10.7069C2.10536 10.5194 2 10.265 2 9.99979C2 9.73457 2.10536 9.48022 2.29289 9.29268C2.48043 9.10514 2.73478 8.99979 3 8.99979H14.586L12.293 6.70679C12.1055 6.51926 12.0002 6.26495 12.0002 5.99979C12.0002 5.73462 12.1055 5.48031 12.293 5.29279Z" fill="#000"/>
-                                </svg>
+                            <button className='group flex items-center bg-gradient-to-r bg-[#181825] hover:bg-[#D4C0FF] hover:text-black transition-all border-2 border-[#FFF]/10 dark:border-[#FFF]/10 hover:border-[#D4C0FF] hover:border-2 dark:hover:border-[#D4C0FF] text-gray-200 mt-6 font-bold py-4 px-6 rounded-lg text-sm sm:text-base md:text-lg focus:outline-none focus:outline-2 focus:outline-[#D4C0FF]'>
+                                <div className='group-hover:animate-fade-right group-hover:animate-ease-out group-hover:animate-normal animate-fade-left animate-ease-out'>
+                                    <svg className="group-hover:block hidden bg-white rounded-md size-8 p-2 button-arrow mr-4" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path className='' fill-rule="evenodd" clip-rule="evenodd" d="M12.293 5.29279C12.4805 5.10532 12.7348 5 13 5C13.2652 5 13.5195 5.10532 13.707 5.29279L17.707 9.29279C17.8945 9.48031 17.9998 9.73462 17.9998 9.99979C17.9998 10.265 17.8945 10.5193 17.707 10.7068L13.707 14.7068C13.5184 14.8889 13.2658 14.9897 13.0036 14.9875C12.7414 14.9852 12.4906 14.88 12.3052 14.6946C12.1198 14.5092 12.0146 14.2584 12.0123 13.9962C12.01 13.734 12.1108 13.4814 12.293 13.2928L14.586 10.9998H3C2.73478 10.9998 2.48043 10.8944 2.29289 10.7069C2.10536 10.5194 2 10.265 2 9.99979C2 9.73457 2.10536 9.48022 2.29289 9.29268C2.48043 9.10514 2.73478 8.99979 3 8.99979H14.586L12.293 6.70679C12.1055 6.51926 12.0002 6.26495 12.0002 5.99979C12.0002 5.73462 12.1055 5.48031 12.293 5.29279Z" fill="#000"/>
+                                    </svg>
+                                </div>
+                                <span className='group-hover:animate-fade-right group-hover:animate-ease-out group-hover:animate-delay-0 animate-fade-left animate-delay-75'>Contact Us</span>
+                                <div className='group-hover:animate-fade-right group-hover:animate-ease-out group-hover:animate-normal animate-fade-left animate-ease-out'>
+                                    <svg className="group-hover:hidden block bg-[#D4C0FF] rounded-md size-8 p-2 button-arrow ml-4" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path className='' fill-rule="evenodd" clip-rule="evenodd" d="M12.293 5.29279C12.4805 5.10532 12.7348 5 13 5C13.2652 5 13.5195 5.10532 13.707 5.29279L17.707 9.29279C17.8945 9.48031 17.9998 9.73462 17.9998 9.99979C17.9998 10.265 17.8945 10.5193 17.707 10.7068L13.707 14.7068C13.5184 14.8889 13.2658 14.9897 13.0036 14.9875C12.7414 14.9852 12.4906 14.88 12.3052 14.6946C12.1198 14.5092 12.0146 14.2584 12.0123 13.9962C12.01 13.734 12.1108 13.4814 12.293 13.2928L14.586 10.9998H3C2.73478 10.9998 2.48043 10.8944 2.29289 10.7069C2.10536 10.5194 2 10.265 2 9.99979C2 9.73457 2.10536 9.48022 2.29289 9.29268C2.48043 9.10514 2.73478 8.99979 3 8.99979H14.586L12.293 6.70679C12.1055 6.51926 12.0002 6.26495 12.0002 5.99979C12.0002 5.73462 12.1055 5.48031 12.293 5.29279Z" fill="#000"/>
+                                    </svg>
+                                </div>
                             </button>
                         </a>
-                        <a href='#services' className='text-black font-bold mt-6 px-6 underline dark:text-[#D4C0FF]/50 dark:hover:text-[#D4C0FF] text-xs sm:text-base md:text-lg'>Learn more</a>
+                        <a href='#services' className='text-black font-bold mt-6 px-6 dark:text-[#D4C0FF]/50 dark:hover:text-[#D4C0FF] text-xs sm:text-base md:text-lg group'>
+                            Learn more
+                            <span className='group-hover:animate-fade-right'> &gt; </span>
+                            <span class="block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#181825] dark:bg-[#D4C0FF]"></span>
+                        </a>
                     </div>
                 </div>
                 <div className='justify-between image-container lg:block'>

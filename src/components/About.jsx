@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+export function useIsVisible(ref) {
+    const [isIntersecting, setIntersecting] = useState(false);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(([entry]) => {
+          setIntersecting(entry.isIntersecting)
+      } 
+      );
+      
+      observer.observe(ref.current);
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref]);
+  
+    return isIntersecting;
+  }
 
 const About = () => {
+    const ref1 = useRef();
+    const isVisible1 = useIsVisible(ref1);
+
     return (
-        <div id="about" className="flex items-center justify-center h-auto md:h-screen">
-            <div className="p-4 py-8 m-8 sm:p-8 md:p-4 md:m-0">
+        <div id="about"  className={`flex items-center justify-center h-auto md:h-screen`}>
+            <div ref={ref1} className={`p-4 py-8 m-8 sm:p-8 md:p-4 md:m-0 ${isVisible1 ? "opacity-100" : "opacity-0"} transition-opacity duration-700 ease-in`}>
                 <h1 className='text-lg sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl mb-4 poppins-semibold text-center'>
                     <span>We develop high quality</span> <br></br>
                 </h1>

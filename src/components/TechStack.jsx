@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+export function useIsVisible(ref) {
+    const [isIntersecting, setIntersecting] = useState(false);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(([entry]) => {
+          setIntersecting(entry.isIntersecting)
+      } 
+      );
+      
+      observer.observe(ref.current);
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref]);
+  
+    return isIntersecting;
+}
+
 
 const TechStack = () => {
+    const ref3 = useRef();
+    const isVisible3 = useIsVisible(ref3);
+    
     return (
-        <div className='m-4 p-4 sm:m-8 sm:p-8'>
+        <div ref={ref3} className={`m-4 p-4 sm:m-8 sm:p-8 ${isVisible3 ? "opacity-100" : "opacity-0"} transition-opacity duration-700 ease-in`}>
             <h3 className="text-center text-sm poppins-semibold text-sky-300 sm:text-lg pb-4">
                 Tech Stack
             </h3>
