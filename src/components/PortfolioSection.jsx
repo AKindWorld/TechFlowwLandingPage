@@ -16,7 +16,7 @@ const Portfolio = () => {
                 return  <div className='h-auto content-center text-center poppins-bold text-2xl' id="process">
                            <ProcessOverview/>
                         </div>;
-            case 'Achievements':
+            case 'Testimonials':
                 return  <div className='h-auto content-center poppins-bold text-2xl' id="testimonials">
                             <Testimonials/>
                         </div>;
@@ -36,7 +36,7 @@ const Portfolio = () => {
                 <select id="Tab" className="w-full rounded-md border-gray-200 dark:bg-[#181825] outline-none border-none" value={selectedTab} onChange={(e) => setSelectedTab(e.target.value)}>
                     <option className="w-full" value="Profiles">Profiles</option>
                     <option value="Process Overview">Process Overview</option>
-                    <option value="Achievements">Achievements</option>
+                    <option value="Testimonials">Testimonials</option>
                 </select>
             </div>
 
@@ -60,10 +60,10 @@ const Portfolio = () => {
 
                     <a
                         href="#portfolio"
-                        className={getTabClassName('Achievements')}
-                        onClick={() => setSelectedTab('Achievements')}
+                        className={getTabClassName('Testimonials')}
+                        onClick={() => setSelectedTab('Testimonials')}
                     >
-                        Achievements
+                        Testimonials
                     </a>
                 </nav>
             </div>

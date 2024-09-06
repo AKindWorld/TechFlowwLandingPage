@@ -147,6 +147,10 @@ function NavBar() {
               Portfolio
               <span class="block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#D4C0FF]"></span>
             </Link>
+            <Link to="/projects" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition duration-300 group">
+              Projects
+              <span class="block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#D4C0FF]"></span>
+            </Link>
             <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 cursor-default group">
               Pricing
               <span className="text-xs bg-[#D4C0FF]/50 lg:bg-[#D4C0FF] rounded-full text-black p-1 ml-1 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-200">Coming Soon</span>

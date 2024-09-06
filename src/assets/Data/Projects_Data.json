@@ -1,0 +1,25 @@
+{
+    "projects": [
+        {
+            "image": "/static/assets/Media/ProjectMedia/01.png",
+            "domain": "Web Development",
+            "heading": "Fashion Cube",
+            "description": "A modern e-commerce website for fashion.",
+            "link": "#"
+        },
+        {
+            "image": "/static/assets/Media/ProjectMedia/02.png",
+            "domain": "Web Development",
+            "heading": "Booken",
+            "description": "A modern & beautiful bookstore website.",
+            "link": "#"
+        },
+        {
+            "image": "/static/assets/Media/ProjectMedia/03.png",
+            "domain": "Web Development",
+            "heading": "Homyz",
+            "description": "A modern website for finding and booking real estate.",
+            "link": "#"
+        }
+    ]
+}
