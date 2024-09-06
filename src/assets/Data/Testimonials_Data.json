@@ -5,45 +5,45 @@
             "name": "Anita Gupta",
             "position": "CEO",
             "company": "ABC Company",
-            "location": "Mumbai",
+            "location": "Mumbai, India",
             "rating": 5,
-            "testimonial": "TechflowWIT Services truly understood our vision and brought it to life with an intuitive and user-friendly app. Their team's attention to detail is unmatched!"
+            "testimonial": "Techfloww IT Services truly understood our vision and delivered to us with an intuitive and user-friendly app. Their team's attention to detail is unmatched!"
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
             "name": "Rajiv Sharma",
             "position": "CTO",
             "company": "XYZ Company",
-            "location": "Kolkata",
+            "location": "Kolkata, India",
             "rating": 4.5,
-            "testimonial": "TechflowWIT Services delivered a clean and professional website that has significantly boosted our online presence. We had a few rounds of revisions, but they handled them efficiently. The final product was worth the wait."
+            "testimonial": "Techfloww IT Services delivered a clean and professional website that has significantly boosted our online presence. We had a few rounds of revisions, but they handled them efficiently."
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
-            "name": "Sarah Thompson",
+            "name": "Gita Pau",
             "position": "CTO",
             "company": "XYZ Company",
-            "location": "New York, USA",
+            "location": "Delhi, India",
             "rating": 4.5,
-            "testimonial": "I was impressed with how quickly TechflowWIT Services completed our app. We requested a few changes after the initial delivery, and they were responsive in making those adjustments. The app works great for our needs."
+            "testimonial": "They did a nice work within the budget. Their after sale service is also very good."
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
             "name": "Vikram Patel",
             "position": "CTO",
             "company": "XYZ Company",
-            "location": "Ahmedabad",
+            "location": "Ahmedabad, India",
             "rating": 4.5,
-            "testimonial": "We approached TechflowWIT Services to revamp our outdated website, and they transformed it into a modern, sleek, and highly interactive platform. Our customers love it!"
+            "testimonial": "We approached Techfloww IT Services to revamp our outdated website, and they transformed it into a modern, sleek, and highly interactive platform."
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
             "name": "Ajay Desai",
             "position": "CTO",
             "company": "XYZ Company",
-            "location": "Hyderabad",
+            "location": "Hyderabad, India",
             "rating": 4.5,
-            "testimonial": "TechflowWIT Services took the time to understand our specific needs and delivered a customized app that has significantly boosted our business. Their team is professional and reliable."
+            "testimonial": "Techfloww IT Services took the time to understand our specific needs and delivered a customized app that has significantly boosted our business. Their team is professional and reliable."
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
@@ -52,25 +52,34 @@
             "company": "XYZ Company",
             "location": "Sydney, Australia",
             "rating": 4.5,
-            "testimonial": "They did a nice job."
+            "testimonial": "Techfloww IT Services delivered our website on time and within budget. They were responsive to our feedback, and the final product is exactly what we wanted. It’s been a positive experience working with them."
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
             "name": "Simran Kaur",
             "position": "CTO",
             "company": "XYZ Company",
-            "location": "Jaipur",
+            "location": "Jaipur, India",
             "rating": 4.5,
-            "testimonial": "The e-commerce website developed by TechflowWIT Services is both attractive and easy to navigate. They were patient with our feedback and made sure we were satisfied with the final design. It’s been a great addition to our business."
+            "testimonial": "The e-commerce website developed by Techfloww IT Services is both attractive and easy to navigate. They provided It’s been a great addition to our business."
         },
         {
             "avatar": "/static/assets/Media/DefaultAvatar01.png",
             "name": "Kavita Gupta",
             "position": "CTO",
             "company": "XYZ Company",
-            "location": "Noida",
+            "location": "Noida, India",
             "rating": 4.5,
-            "testimonial": "TechflowWIT Services delivered our website on time and within budget. They were responsive to our feedback, and the final product is exactly what we envisioned. It’s been a positive experience working with them."
+            "testimonial": "We really appreciate how amazing product they have delivered according to our needs. The TechFloww team is friendly, and trustable."
+        },
+        {
+            "avatar": "/static/assets/Media/DefaultAvatar01.png",
+            "name": "Sarah Thompson",
+            "position": "CTO",
+            "company": "XYZ Company",
+            "location": "New York, USA",
+            "rating": 4.5,
+            "testimonial": "We are impressed with how quickly Techfloww IT Services completed our app at the cheapest price. We requested a few changes after the initial delivery, and they were responsive in making those adjustments. The app works great for our needs."
         }
     ]
 }
