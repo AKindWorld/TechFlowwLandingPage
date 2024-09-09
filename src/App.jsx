@@ -11,6 +11,7 @@ import Home from './Pages/Home'
 import Portfolio from './Pages/Portfolio'
 import Contact from './Pages/Contact'
 import Projects from './Pages/Projects'
+import Careers from './Pages/Careers'
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </Router>
   )

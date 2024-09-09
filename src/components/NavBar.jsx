@@ -31,7 +31,7 @@ function NavBar() {
 
   return (
     <div className='relative px-6'>
-      <nav className={`flex items-center justify-between flex-wrap pt-4 pb-4 z-10 relative lg:fixed w-full mx-auto left-0 right-0 top-0 px-4 mb-4 mt-4 rounded-lg ${isScrolled ? 'bg-[#181825] shadow md:max-w-[75vw] max-w-[90vw]' : 'backdrop-blur bg-[#181825]/40 max-w-[90vw]'} transition-all duration-500 ease-in-out`}>
+      <nav className={`flex items-center justify-between flex-wrap pt-4 pb-4 z-10 relative lg:fixed w-full mx-auto left-0 right-0 top-0 px-4 mb-4 mt-4 rounded-lg ${isScrolled ? 'bg-[#181825] shadow md:max-w-[75vw] max-w-[90vw]' : 'backdrop-blur bg-[#181825]/70 dark:bg-[#181825]/40 max-w-[90vw]'} transition-all duration-500 ease-in-out`}>
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl tracking-tight">
             <Link to="/">
@@ -135,10 +135,10 @@ function NavBar() {
         </div>
         <div className={`${isOpen ? 'block' : 'hidden'} w-full block flex-grow lg:flex lg:items-center lg:w-auto text-center p-6 md:p-0 transition-all duration-200`}>
           <div className="text-sm lg:flex-grow">
-            <Link to="/#about" onClick={toggleMenu} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition duration-300 group">
+            {/* <Link to="/#about" onClick={toggleMenu} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition duration-300 group">
               About
               <span class="block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#D4C0FF]"></span>
-            </Link>
+            </Link> */}
             <Link to="/#services" onClick={toggleMenu} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition duration-300 group">
               Services
               <span class="block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#D4C0FF]"></span>
@@ -149,6 +149,10 @@ function NavBar() {
             </Link>
             <Link to="/projects" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition duration-300 group">
               Projects
+              <span class="uppercase block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#D4C0FF]"></span>
+            </Link>
+            <Link to="/careers" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition duration-300 group">
+              Careers
               <span class="uppercase block rounded-xl max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#D4C0FF]"></span>
             </Link>
             <Link to="/" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 cursor-default group">

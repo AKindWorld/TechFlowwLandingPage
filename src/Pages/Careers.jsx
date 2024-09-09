@@ -1,24 +1,24 @@
 import React from 'react';
-import ProjectShowcase from '../components/ProjectShowcase';
 import NavBar from '../components/NavBar';
+import CareerForm from '../components/CareerForm';
 import Footer from '../components/Footer';
 import Background from '../components/Background';
 import { Helmet } from 'react-helmet';
 
-function Projects() {
+const Careers = () => {
     return (
         <div>
             <div>
                 <Helmet>
-                    <title>Projects | TechFloww IT Services</title>
+                    <title>Careers | TechFloww IT Services</title>
                 </Helmet>
             </div>
             <NavBar />
-            <ProjectShowcase />
+            <CareerForm />
             <Footer />
             <Background />
         </div>
     );
-}
+};
 
-export default Projects;
+export default Careers;

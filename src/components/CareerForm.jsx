@@ -41,7 +41,10 @@ const ContactForm = () => {
         "entry.648187125": "",
         "entry.942104210": "",
         "entry.2053105548": "",
-        "entry.830057170": ""
+        "entry.830057170": "",
+        "entry.339281309": "",
+        "entry.1547017125": "",
+        "entry.1994862998": ""
     });
     const [showOtherField, setShowOtherField] = useState(false);
 
@@ -60,8 +63,8 @@ const ContactForm = () => {
 
         
 
-        let secreturl = import.meta.env.VITE_REACT_APP_CONTACT_FORM_URL;
-        let url = `https://docs.google.com/forms/d/e/${secreturl}/formResponse?entry.2056271310=${formData["entry.2056271310"]}&entry.381005483=${formData["entry.381005483"]}&entry.648187125=${formData["entry.648187125"]}&entry.942104210=${formData["entry.942104210"]}&entry.2053105548=${formData["entry.2053105548"]}&entry.830057170=${formData["entry.830057170"]}`
+        let secreturl2 = import.meta.env.VITE_REACT_APP_CONTACT_FORM_URL2;
+        let url = `https://docs.google.com/forms/d/e/${secreturl2}/formResponse?entry.2056271310=${formData["entry.2056271310"]}&entry.381005483=${formData["entry.381005483"]}&entry.648187125=${formData["entry.648187125"]}&entry.942104210=${formData["entry.942104210"]}&entry.2053105548=${formData["entry.2053105548"]}&entry.830057170=${formData["entry.830057170"]}&entry.339281309=${formData["entry.339281309"]}&entry.1547017125=${formData["entry.1547017125"]}&entry.1994862998=${formData["entry.1994862998"]}`
 
         const res = await fetch(url, {
             method: 'POST',
@@ -79,6 +82,8 @@ const ContactForm = () => {
                     <div className="lg:col-span-2 lg:py-12">
                         <img src="/static/assets/Media/Logo-Text-Light-Transparent.png" alt="Logo" className="max-w-[15vw] hidden md:block"/>
                         <p className="max-w-xl text-2xl text-gray-800 dark:text-gray-200 font-bold">
+                            Work with us at
+                            <br/>
                             TechFloww IT Services
                         </p>
 
@@ -115,11 +120,11 @@ const ContactForm = () => {
                             <form onSubmit={handleSubmit} target="_self" className="space-y-4">
                                 <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                     <div className='flex flex-col-reverse'>
-                                        <label className="sr-only" htmlFor="entry.2056271310">Name</label>
+                                        <label className="sr-only" htmlFor="entry.2056271310">Full Name</label>
                                         <input
                                             required
-                                            className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
-                                            placeholder="Name"
+                                            className="form-input peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            placeholder="Full Name"
                                             type="text"
                                             id="name"
                                             name="entry.2056271310"
@@ -128,7 +133,7 @@ const ContactForm = () => {
                                             autoComplete="off"
                                         />
                                         <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
-                                            Name
+                                            Full Name
                                         </p>                                        
                                     </div>
                                     <div className='flex flex-col-reverse'>
@@ -190,69 +195,69 @@ const ContactForm = () => {
 
                                 <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
 
-                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">What are you enquiring about?</div>
+                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">What role do you want to apply to?</div>
 
                                 <fieldset className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
                                     <div>
                                         <label
-                                            htmlFor="entry.2053105548_serviceenquiries"
+                                            htmlFor="entry.2053105548_softwaredeveloper"
                                             className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
                                             tabIndex="0"
                                         >
                                             <input
                                                 className="sr-only"
-                                                id="entry.2053105548_serviceenquiries"
+                                                id="entry.2053105548_softwaredeveloper"
                                                 type="radio"
                                                 tabIndex="-1"
                                                 name="entry.2053105548"
-                                                value="Service Enquiries"
-                                                checked={formData["entry.2053105548"] === 'Service Enquiries'}
+                                                value="Software Developer"
+                                                checked={formData["entry.2053105548"] === 'Software Developer'}
                                                 onChange={handleInputData("entry.2053105548")}
                                             />
 
-                                            <span className="text-sm"> Service Enquiry </span>
+                                            <span className="text-sm"> Software Developer </span>
                                         </label>
                                     </div>
 
                                     <div>
                                         <label
-                                            htmlFor="entry.2053105548_custompricing"
+                                            htmlFor="entry.2053105548_designer"
                                             className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
                                             tabIndex="0"
                                         >
                                             <input
                                                 className="sr-only"
-                                                id="entry.2053105548_custompricing"
+                                                id="entry.2053105548_designer"
                                                 type="radio"
                                                 tabIndex="-1"
                                                 name="entry.2053105548"
-                                                value="Custom Pricing"
-                                                checked={formData["entry.2053105548"] === 'Custom Pricing'}
+                                                value="Designer"
+                                                checked={formData["entry.2053105548"] === 'Designer'}
                                                 onChange={handleInputData("entry.2053105548")}
                                             />
 
-                                            <span className="text-sm"> Custom Pricing </span>
+                                            <span className="text-sm"> Designer </span>
                                         </label>
                                     </div>
 
                                     <div>
                                         <label
-                                            htmlFor="entry.2053105548_helpandsupport"
+                                            htmlFor="entry.2053105548_devopsengineer"
                                             className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 dark:text-gray-300 dark:hover:text-[#D4C0FF] hover:border-black dark:hover:border-[#D4C0FF] has-[:checked]:border-[#D4C0FF] has-[:checked]:bg-[#D4C0FF] has-[:checked]:text-black has-[:checked]:font-semibold dark:has-[:checked]:hover:text-black"
                                             tabIndex="0"
                                         >
                                             <input
                                                 className="sr-only"
-                                                id="entry.2053105548_helpandsupport"
+                                                id="entry.2053105548_devopsengineer"
                                                 type="radio"
                                                 tabIndex="-1"
                                                 name="entry.2053105548"
-                                                value="Help And Support"
-                                                checked={formData["entry.2053105548"] === 'Help And Support'}
+                                                value="DevOps Engineer"
+                                                checked={formData["entry.2053105548"] === 'DevOps Engineer'}
                                                 onChange={handleInputData("entry.2053105548")}
                                             />
 
-                                            <span className="text-sm"> Help & Support </span>
+                                            <span className="text-sm"> DevOps Engineer </span>
                                         </label>
                                     </div>
 
@@ -278,11 +283,64 @@ const ContactForm = () => {
                                 </fieldset>
 
                                 <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+
+                                <div className="mb-3">
+                                    <label htmlFor="formFile" className="text-sm text-gray-600 dark:text-gray-300 mt-8">
+                                        Upload your CV/Resume here:
+                                    </label>
+                                    <input className="relative m-0 mt-2 block w-full min-w-0 flex-auto rounded border border-solid border-gray-200 bg-clip-padding px-3 py-[0.32rem] text-sm font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-gray-300 dark:text-neutral-200 dark:file:bg-[#D4C0FF] dark:file:text-[#181825] dark:focus:border-primary" type="file" id="formFile"/>
+                                </div>
+
+                                <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div className='flex flex-col-reverse'>
+                                        <label className="sr-only" htmlFor="entry.830057170">Highest Educational Qualification</label>
+                                        <select
+                                            required
+                                            className="form-input peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            id="name"
+                                            name="entry.830057170"
+                                            onChange={handleInputData("entry.830057170")}
+                                            value={formData["entry.830057170"]}
+                                        >
+                                            <option value="">Select...</option>
+                                            <option value="secondary">Secondary School</option>
+                                            <option value="higher-secondary">Higher Secondary</option>
+                                            <option value="diploma">Diploma</option>
+                                            <option value="graduate">Graduate</option>
+                                            <option value="post-graduate">Post Graduate</option>
+                                            <option value="doctorate">Doctorate</option>
+                                            <option value="others">Others</option>
+                                            {/* Add more options as needed */}
+                                        </select>
+                                        <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                            Highest Educational Qualification
+                                        </p>                                        
+                                    </div>
+                                    <div className='flex flex-col-reverse'>
+                                        <label className="sr-only" htmlFor="entry.339281309">Years of Experience</label>
+                                        <input
+                                            required
+                                            className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                            placeholder="Years of Experience"
+                                            type="text"
+                                            id="text"
+                                            name="experience"
+                                            value={formData["entry.339281309"]}
+                                            onChange={handleInputData("entry.339281309")}
+                                            autoComplete="off"
+                                        />
+                                        <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                            Years of Experience
+                                        </p>                                        
+                                    </div>
+                                </fieldset>
+
+                                <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
                                 
-                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">Briefly enter some details about the reason for contacting us:</div>
+                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">Tell us briefly why you're interested in working with us:</div>
 
                                 <fieldset className='flex flex-col-reverse'>
-                                    <label className="sr-only" htmlFor="entry.830057170">Details</label>
+                                    <label className="sr-only" htmlFor="entry.1547017125">Details</label>
 
                                     <textarea
                                         required
@@ -291,8 +349,31 @@ const ContactForm = () => {
                                         rows="8"
                                         id="message"
                                         name="message"
-                                        value={formData["entry.830057170"]}
-                                        onChange={handleInputData("entry.830057170")}
+                                        value={formData["entry.1547017125"]}
+                                        onChange={handleInputData("entry.1547017125")}
+                                        autoComplete={false}
+                                    ></textarea>
+                                    <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">
+                                        Details
+                                    </p>
+                                </fieldset>
+
+                                <hr class="w-48 h-1 my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+                                
+                                <div className="text-sm text-gray-600 dark:text-gray-300 mt-8">Tell us briefly something about yourself:</div>
+
+                                <fieldset className='flex flex-col-reverse'>
+                                    <label className="sr-only" htmlFor="entry.1994862998">Details</label>
+
+                                    <textarea
+                                        required
+                                        className="peer w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#181825]"
+                                        placeholder="Details"
+                                        rows="8"
+                                        id="message"
+                                        name="message"
+                                        value={formData["entry.1994862998"]}
+                                        onChange={handleInputData("entry.1994862998")}
                                         autoComplete={false}
                                     ></textarea>
                                     <p class="items-center mb-2 text-xs text-slate-500 peer-placeholder-shown:h-0 peer-placeholder-shown:opacity-0 h-max opacity-100 transition-all duration-300">

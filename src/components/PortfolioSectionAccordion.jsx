@@ -9,11 +9,11 @@ const AccordionItem = ({ title, children }) => {
   return (
     <div className="">
       <div 
-        className="group p-3 flex justify-between items-center cursor-pointer m-8 mx-16 rounded-lg bg-[#181825] text-white hover:bg-[#D4C0FF] hover:text-black hover:border-[#D4C0FF] focus:outline-none focus:ring transition-all duration-150" 
+        className="group p-3 flex justify-between items-center cursor-pointer m-8 md:mx-16 rounded-lg bg-[#181825] text-white hover:bg-[#D4C0FF] hover:text-black hover:border-[#D4C0FF] focus:outline-none focus:ring transition-all duration-150" 
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={`${isOpen ? 'font-semibold' : 'font-normal' } ml-2`}>{title}</span>
-        <img src="/static/assets/Icons/ChevronUpIcon.svg" className={`size-5 invert group-hover:invert-0 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+        <img src="/static/assets/Icons/ChevronUpIcon.svg" className={`size-5 invert group-hover:invert-0 ${isOpen ? 'rotate-0' : 'rotate-180'}`} />
       </div>
       {isOpen && <div className="p-3">{children}</div>}
     </div>
