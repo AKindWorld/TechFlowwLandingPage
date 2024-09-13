@@ -3,9 +3,9 @@
         {
             "image": "/static/assets/Media/ProjectMedia/01.png",
             "domain": "Web Development",
-            "heading": "Fashion Cube",
-            "description": "A modern e-commerce website for fashion.",
-            "link": "#"
+            "heading": "FashionFloww [codename]",
+            "description": "A modern e-commerce website for clothing & accessories.",
+            "link": "https://fashionfloww-demo.vercel.app/"
         },
         {
             "image": "/static/assets/Media/ProjectMedia/02.png",

@@ -19,7 +19,7 @@ const ProjectShowcaseCard = () => {
                         </p>
                         
                         <div className='flex flex-row'>
-                            <a href={project.github} className="mt-4 mr-4 inline-flex items-center gap-2 rounded border border-[#181825] bg-[#181825] dark:bg-[#D4C0FF] px-4 py-3 text-white dark:text-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black focus:outline-none focus:ring transition-all duration-150">
+                            <a href={project.link} target="_blank" className="mt-4 mr-4 inline-flex items-center gap-2 rounded border border-[#181825] bg-[#181825] dark:bg-[#D4C0FF] px-4 py-3 text-white dark:text-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black focus:outline-none focus:ring transition-all duration-150">
                                 <img src="/static/assets/Icons/ArrowRightUp.svg" alt="GH Logo" className='pointer-events-none text-sm size-5 invert dark:invert-0 dark:group-hover:invert-0'/>
                                 <span className="text-sm font-medium"> Visit </span>
                             </a>
